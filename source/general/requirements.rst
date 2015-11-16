@@ -2,20 +2,20 @@
 Kebutuhan Server
 ################
 
-`PHP <http://php.net/>`_ version 5.4 or newer is recommended.
+`PHP <http://php.net/>`_ versi 5.4 atau terbaru lebih dianjurkan.
 
-It should work on 5.2.4 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+CodeIgniter seharusnya bisa bekerja pada 5.2.4 juga, tapi kami sangat 
+menyarankan Anda untuk tidak menjalankan PHP versi lama, karena masalah 
+keamanan dan masalah kinerja, serta fitur yang hilang.
 
-A database is required for most web application programming.
-Currently supported databases are:
+Database diperlukan untuk sebagian besar pemrograman aplikasi web.
+Saat ini database yang didukung adalah:
 
-  - MySQL (5.1+) via the *mysql* (deprecated), *mysqli* and *pdo* drivers
-  - Oracle via the *oci8* and *pdo* drivers
-  - PostgreSQL via the *postgre* and *pdo* drivers
-  - MS SQL via the *mssql*, *sqlsrv* (version 2005 and above only) and *pdo* drivers
-  - SQLite via the *sqlite* (version 2), *sqlite3* (version 3) and *pdo* drivers
-  - CUBRID via the *cubrid* and *pdo* drivers
-  - Interbase/Firebird via the *ibase* and *pdo* drivers
-  - ODBC via the *odbc* and *pdo* drivers (you should know that ODBC is actually an abstraction layer)
+  - MySQL (5.1+) melalui driver *mysql* (usang), *mysqli* dan *pdo* 
+  - Oracle melalui driver *oci8* dan *pdo* 
+  - PostgreSQL melalui driver *postgre* dan *pdo* 
+  - MS SQL melalui driver *mssql*, *sqlsrv* (hanya versi 2005 dan diatasnya) dan *pdo* 
+  - SQLite melalui driver *sqlite* (versi 2), *sqlite3* (versi 3) dan *pdo* 
+  - CUBRID melalui driver *cubrid* dan *pdo* 
+  - Interbase/Firebird melalui driver *ibase* dan *pdo* 
+  - ODBC melalui driver *odbc* dan *pdo* (Anda harus tahu bahwa ODBC sebenarnya merupakan *abstraction layer*)
