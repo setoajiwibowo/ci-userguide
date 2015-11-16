@@ -2,14 +2,13 @@
 Menulis Dokumentasi CodeIgniter
 ###############################
 
-CodeIgniter uses Sphinx to generate its documentation in a variety of formats,
-using reStructuredText to handle the formatting.  If you are familiar with
-Markdown or Textile, you will quickly grasp reStructuredText.  The focus is
-on readability and user friendliness.
-While they can be quite technical, we always write for humans!
+CodeIgniter menggunakan *Sphinx* untuk menghasilkan dokumentasi dalam berbagai format, 
+menggunakan *reStructuredText* untuk menangani format. Jika Anda sudah familiar 
+dengan *Markdown* atau *Textile*, Anda akan segera memahami *reStructuredText*. 
+Fokusnya adalah pada pembacaan dan ramah pengguna. Sementara mereka bisa sangat teknis, 
+kami selalu menulis untuk manusia!
 
-A local table of contents should always be included, like the one below.
-It is created automatically by inserting the following:
+Sebuah daftar isi harus selalu disertakan, seperti di bawah.  Daftar isi dibuat secara otomatis dengan memasukkan berikut
 
 ::
 
@@ -27,60 +26,59 @@ It is created automatically by inserting the following:
 
   <div class="custom-index container"></div>
 
-The <div> that is inserted as raw HTML is a hook for the documentation's
-JavaScript to dynamically add links to any function and method definitions
-contained in the current page.
+<div> yang dimasukkan sebagai *raw HTML* adalah sebuah *hook* untuk *JavaScript* 
+dokumentasi ini untuk secara dinamis menambahkan link ke setiap fungsi dan 
+definisi metode yang terdapat dalam halaman saat ini.
 
-**************
-Tools Required
-**************
+********************
+Alat yang dibutuhkan
+********************
 
-To see the rendered HTML, ePub, PDF, etc., you will need to install Sphinx
-along with the PHP domain extension for Sphinx.  The underlying requirement
-is to have Python installed.  Lastly, you will install the CI Lexer for
-Pygments, so that code blocks can be properly highlighted.
+Untuk melihat HTML, ePub, PDF, dll yang dihasilkan, Anda akan perlu menginstal 
+*Sphinx* bersama dengan ekstensi domain PHP untuk *Sphinx*. Persyaratan mendasar 
+adalah *Python* harus diinstal. Terakhir, Anda akan menginstal *CI Lexer* 
+untuk *Pygments*, sehingga blok kode dapat disorot dengan baik.
 
 .. code-block:: bash
 
 	easy_install "sphinx==1.2.3"
 	easy_install sphinxcontrib-phpdomain
 
-Then follow the directions in the README file in the :samp:`cilexer` folder
-inside the documentation repository to install the CI Lexer.
+Kemudian ikuti petunjuk di file README di folder :samp:`cilexer` 
+dalam repositori dokumentasi untuk menginstal *CI Lexer*.
 
 
 
-*****************************************
-Page and Section Headings and Subheadings
-*****************************************
+******************************************
+Halaman dan Bagian Heading dan Sub Heading
+******************************************
 
-Headings not only provide order and sections within a page, but they also
-are used to automatically build both the page and document table of contents.
-Headings are formed by using certain characters as underlines for a bit of
-text.  Major headings, like page titles and section headings also use
-overlines.  Other headings just use underlines, with the following hierarchy::
+Judul tidak hanya memberikan order dan bagian dalam halaman, tetapi mereka juga 
+digunakan untuk secara otomatis membangun halaman dan daftar isi dokumen. 
+Judul dibentuk dengan menggunakan karakter tertentu sebagai garis bawah untuk sedikit teks.  
+Judul utama, seperti halaman judul dan judul bagian juga menggunakan *overlines*.  
+Judul lain hanya menggunakan garis bawah, dengan hirarki berikut::
 
-	# with overline for page titles
-	* with overline for major sections
-	= for subsections
-	- for subsubsections
-	^ for subsubsubsections
-	" for subsubsubsubsections (!)
+	# dengan overline untuk judul halaman
+	* dengan overline untuk bagian utama
+	= untuk subsections
+	- untuk subsubsections
+	^ untuk subsubsubsections
+	" untuk subsubsubsubsections (!)
 
-The :download:`TextMate ELDocs Bundle <./ELDocs.tmbundle.zip>` can help you
-create these with the following tab triggers::
+File :download:`TextMate ELDocs Bundle <./ELDocs.tmbundle.zip>` dapat membantu Anda membuat *tab triggers* berikut::
 
 	title->
 
-		##########
-		Page Title
-		##########
+		#############
+		Judul Halaman
+		#############
 
 	sec->
 
-		*************
-		Major Section
-		*************
+		************
+		Bagian Utama
+		************
 
 	sub->
 
@@ -105,13 +103,11 @@ create these with the following tab triggers::
 
 
 
-********************
-Method Documentation
-********************
+******************
+Metode Dokumentasi
+******************
 
-When documenting class methods for third party developers, Sphinx provides
-directives to assist and keep things simple.  
-For example, consider the following ReST:
+Ketika mendokumentasikan metode kelas untuk pengembang pihak ketiga, *Sphinx* memberikan arahan untuk membantu dan menjaga hal-hal sederhana.  Sebagai contoh, perhatikan *ReST* berikut
 
 .. code-block:: rst
 
@@ -119,14 +115,14 @@ For example, consider the following ReST:
 
 		.. php:method:: some_method ( $foo [, $bar [, $bat]])
 
-			This function will perform some action. The ``$bar`` array must contain
-			a something and something else, and along with ``$bat`` is an optional
-			parameter.
+			Fungsi ini akan melakukan beberapa tindakan.  Array ``$bar`` harus 
+			mengandung sesuatu dan sesuatu yang lain, dan bersama dengan ``$bat`` 
+			merupakan parameter opsional.
 
-			:param int $foo: the foo id to do something in
-			:param mixed $bar: A data array that must contain a something and something else
-			:param bool $bat: whether or not to do something
-			:returns: FALSE on failure, TRUE if successful
+			:param int $foo: id *foo* untuk melakukan sesuatu
+			:param mixed $bar: Sebuah array data yang harus berisi sesuatu dan sesuatu yang lain
+			:param bool $bat: iya atau tidak untuk melakukan sesuatu
+			:returns: *FALSE* pada kegagalan, *TRUE* jika berhasil
 			:rtype: bool
 
 			::
@@ -134,7 +130,7 @@ For example, consider the following ReST:
 				$this->load->library('some_class');
 
 				$bar = array(
-					'something'		=> 'Here is this parameter!',
+					'something'		=> 'Berikut adalah parameter ini!',
 					'something_else'	=> 42
 				);
 
@@ -142,61 +138,60 @@ For example, consider the following ReST:
 
 				if ($this->some_class->some_method(4, $bar, $bat) === FALSE)
 				{
-					show_error('An Error Occurred Doing Some Method');
+					show_error('Sebuah Kesalahan Terjadi Saat Melakukan Beberapa Metode');
 				}
 
-			.. note:: Here is something that you should be aware of when using some_method().
-					For real.
+			.. note:: Berikut ini adalah sesuatu yang Anda harus sadari ketika menggunakan some_method().
+					untuk Nyata.
 
-			See also :meth:`Some_class::should_do_something`
+			Lihat juga :meth:`Some_class::should_do_something`
 
 
 		.. php:method:: should_do_something()
 
-			:returns: Whether or not something should be done
+			:returns: iya atau tidak sesuatu yang harus dilakukan
 			:rtype: bool
 
 
-It creates the following display:
+Kode ini menciptakan tampilan berikut:
 
 .. php:class:: Some_class
 
+		.. php:method:: some_method ( $foo [, $bar [, $bat]])
 
-	.. php:method:: some_method ( $foo [, $bar [, $bat]])
+			Fungsi ini akan melakukan beberapa tindakan.  Array ``$bar`` harus 
+			mengandung sesuatu dan sesuatu yang lain, dan bersama dengan ``$bat`` 
+			merupakan parameter opsional.
 
-		This function will perform some action. The ``$bar`` array must contain
-		a something and something else, and along with ``$bat`` is an optional
-		parameter.
+			:param int $foo: id *foo* untuk melakukan sesuatu
+			:param mixed $bar: Sebuah array data yang harus berisi sesuatu dan sesuatu yang lain
+			:param bool $bat: iya atau tidak untuk melakukan sesuatu
+			:returns: *FALSE* pada kegagalan, *TRUE* jika berhasil
+			:rtype: bool
 
-		:param int $foo: the foo id to do something in
-		:param mixed $bar: A data array that must contain a something and something else
-		:param bool $bat: whether or not to do something
-		:returns: FALSE on failure, TRUE if successful
-		:rtype: bool
+			::
 
-		::
+				$this->load->library('some_class');
 
-			$this->load->library('some_class');
+				$bar = array(
+					'something'		=> 'Berikut adalah parameter ini!',
+					'something_else'	=> 42
+				);
 
-			$bar = array(
-				'something'		=> 'Here is this parameter!',
-				'something_else'	=> 42
-			);
+				$bat = $this->some_class->should_do_something();
 
-			$bat = $this->some_class->should_do_something();
+				if ($this->some_class->some_method(4, $bar, $bat) === FALSE)
+				{
+					show_error('Sebuah Kesalahan Terjadi Saat Melakukan Beberapa Metode');
+				}
 
-			if ($this->some_class->some_method(4, $bar, $bat) === FALSE)
-			{
-				show_error('An Error Occurred Doing Some Method');
-			}
+			.. note:: Berikut ini adalah sesuatu yang Anda harus sadari ketika menggunakan some_method().
+					untuk Nyata.
 
-		.. note:: Here is something that you should be aware of when using some_method().
-				For real.
-
-		See also :meth:`Some_class::should_do_something`
+			Lihat juga :meth:`Some_class::should_do_something`
 
 
-	.. php:method:: should_do_something()
+		.. php:method:: should_do_something()
 
-		:returns: Whether or not something should be done
-		:rtype: bool
+			:returns: iya atau tidak sesuatu yang harus dilakukan
+			:rtype: bool
