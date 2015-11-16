@@ -1,27 +1,27 @@
-#####################################
-Developer's Certificate of Origin 1.1
-#####################################
+##############################
+Sertifikat Pengembang Asal 1.1
+##############################
 
-By making a contribution to this project, I certify that:
+Dengan membuat kontribusi untuk proyek ini, saya menyatakan bahwa:
 
-(1)	The contribution was created in whole or in part by me and I
-	have the right to submit it under the open source license
-	indicated in the file; or
+(1)	Kontribusi yang diciptakan secara keseluruhan atau sebagian 
+	oleh saya dan saya memiliki hak untuk menyampaikannya di bawah 
+	lisensi open source yang ditunjukkan dalam file; atau
 
-(2)	The contribution is based upon previous work that, to the best
-	of my knowledge, is covered under an appropriate open source
-	license and I have the right under that license to submit that
-	work with modifications, whether created in whole or in part
-	by me, under the same open source license (unless I am
-	permitted to submit under a different license), as indicated
-	in the file; or
+(2)	Kontribusi didasarkan pada pekerjaan sebelumnya, untuk yang 
+	terbaik dari pengetahuan saya, ditutupi di bawah lisensi 
+	open source yang sesuai dan saya punya hak di bawah lisensi 
+	yang menyampaikan bahwa pekerjaan dengan modifikasi, baik 
+	dibuat secara keseluruhan atau sebagian oleh saya, di bawah  
+	lisensi open source yang sama (kecuali saya diizinkan untuk 
+	menyerahkan bawah lisensi yang berbeda), seperti yang 
+	ditunjukkan dalam file; atau
 
-(3)	The contribution was provided directly to me by some other
-	person who certified (1), (2) or (3) and I have not modified
-	it.
-
-(4)	I understand and agree that this project and the contribution
-	are public and that a record of the contribution (including all
-	personal information I submit with it, including my sign-off) is
-	maintained indefinitely and may be redistributed consistent with
-	this project or the open source license(s) involved.
+(3)	Kontribusi diberikan langsung kepada saya oleh beberapa orang
+	lain yang bersertifikat (1), (2) atau (3) dan saya belum mengubah itu.
+	
+(4)	Saya mengerti dan setuju bahwa proyek ini dan kontribusi bersifat umum 
+	dan bahwa catatan kontribusi (termasuk semua informasi pribadi saya 
+	kirimkan dengan itu, termasuk *sign-off* saya) dipertahankan tanpa 
+	batas waktu dan dapat didistribusikan sesuai dengan proyek ini 
+	atau lisensi open source yang terlibat.

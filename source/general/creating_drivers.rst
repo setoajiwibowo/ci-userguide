@@ -2,10 +2,10 @@
 Membuat Driver
 ##############
 
-Driver Directory and File Structure
-===================================
+Direktori Driver dan Struktur File
+==================================
 
-Sample driver directory and file structure layout:
+Contoh Direktori *driver* dan *layout* struktur file:
 
 -  /application/libraries/Driver_name
 
@@ -16,10 +16,10 @@ Sample driver directory and file structure layout:
       -  Driver_name_subclass_2.php
       -  Driver_name_subclass_3.php
 
-.. note:: In order to maintain compatibility on case-sensitive
-	file systems, the Driver_name directory must be
-	named in the format returned by ``ucfirst()``.
+.. note:: Dalam rangka mempertahankan kompatibilitas pada sistem file 
+	yang *case-sensitive*, direktori *Driver_name* harus diberi nama 
+	dalam format yang dikembalikan oleh ``ucfirst()``.
 
-.. note:: The Driver library's architecture is such that
-	the subclasses don't extend and therefore don't inherit
-	properties or methods of the main driver.
+.. note:: Arsitektur *library Driver* adalah bahwa subclass tidak 
+	memperpanjang dan karena itu tidak mewarisi sifat atau metode 
+	dari *driver* utama.
