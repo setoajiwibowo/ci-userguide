@@ -2,21 +2,17 @@
 Kredit
 ######
 
-CodeIgniter was originally developed by `Rick Ellis <https://ellislab.com/>`_
-(CEO of `EllisLab, Inc. <https://ellislab.com/>`_). The framework was written for
-performance in the real world, with many of the class libraries, helpers, and
-sub-systems borrowed from the code-base of `ExpressionEngine
-<https://ellislab.com/expressionengine>`_.
+CodeIgniter awalnya dikembangkan oleh `Rick Ellis <https://ellislab.com/>`_
+(CEO dari `EllisLab, Inc. <https://ellislab.com/>`_). Framework ditulis untuk kinerja 
+di dunia nyata, dengan banyak kelas library, helper, dan sub-sistem yang dipinjam 
+dari kode-dasar `ExpressionEngine <https://ellislab.com/expressionengine>`_.
 
-It was, for years, developed and maintained by EllisLab, the ExpressionEngine
-Development Team and a group of community members called the Reactor Team.
+Itu, selama bertahun-tahun, dikembangkan dan dikelola oleh EllisLab, Tim Pengembangan 
+ExpressionEngine dan sekelompok anggota komunitas yang disebut Tim Reaktor.
 
-In 2014, CodeIgniter was acquired by the `British Columbia Institute of Technology
-<http://www.bcit.ca/>`_ and was then officially announced as a community-maintained
-project.
+Pada tahun 2014, CodeIgniter diakuisisi oleh `British Columbia Institute of Technology
+<http://www.bcit.ca/>`_ dan kemudian resmi diumumkan sebagai proyek *community-maintained*.
 
-Bleeding edge development is spearheaded by the handpicked contributors
-of the Reactor Team.
+Pendarahan pembangunan tepi dipelopori oleh kontributor yang dipilih sendiri dari Tim Reaktor.
 
-A hat tip goes to Ruby on Rails for inspiring us to create a PHP framework, and
-for bringing frameworks into the general consciousness of the web community.
+Sebuah tip hat pergi ke *Ruby on Rails* untuk inspirasi kita untuk membuat *Framework* PHP, dan untuk membawa *framework* ke dalam kesadaran umum dari web komunitas.

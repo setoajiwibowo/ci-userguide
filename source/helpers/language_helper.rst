@@ -2,8 +2,8 @@
 Language Helper
 ###############
 
-The Language Helper file contains functions that assist in working with
-language files.
+File *Language Helper* berisi fungsi yang membantu dalam bekerja dengan
+file bahasa.
 
 .. contents::
   :local:
@@ -12,32 +12,32 @@ language files.
 
   <div class="custom-index container"></div>
 
-Loading this Helper
-===================
+Memuat Helper ini
+=================
 
-This helper is loaded using the following code::
+Helper ini dimuat menggunakan kode berikut::
 
 	$this->load->helper('language');
 
-Available Functions
-===================
+Fungsi yang Tersedia
+====================
 
-The following functions are available:
+Fungsi yang tersedia sebagai berikut:
 
 
 .. php:function:: lang($line[, $for = ''[, $attributes = array()]])
 
- 	:param	string	$line: Language line key
- 	:param	string	$for: HTML "for" attribute (ID of the element we're creating a label for)
- 	:param	array	$attributes: Any additional HTML attributes
- 	:returns:	HTML-formatted language line label
+ 	:param	string	$line: Kunci garis Bahasa
+ 	:param	string	$for: Atribut HTML "for" (ID dari elemen yang kita menciptakan label)
+ 	:param	array	$attributes: Atribut HTML tambahan
+ 	:returns:	Label baris bahasa berformat HTML
 	:rtype:	string
 
-	This function returns a line of text from a loaded language file with
-	simplified syntax that may be more desirable for view files than
+	Fungsi ini mengembalikan baris teks dari file bahasa dengan sintaks sederhana 
+	yang mungkin lebih diinginkan untuk file *view* dari
 	``CI_Lang::line()``.
 
-	Example::
+	Contoh::
 
 		echo lang('language_key', 'form_item_id', array('class' => 'myClass'));
-		// Outputs: <label for="form_item_id" class="myClass">Language line</label>
+		// Outputs: <label for="form_item_id" class="myClass">Garis bahasa</label>

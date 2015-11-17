@@ -2,8 +2,7 @@
 XML Helper
 ##########
 
-The XML Helper file contains functions that assist in working with XML
-data.
+File *XML Helper* berisi fungsi yang membantu dalam bekerja dengan data XML.
 
 .. contents::
   :local:
@@ -12,39 +11,38 @@ data.
 
   <div class="custom-index container"></div>
 
-Loading this Helper
-===================
+Memuat Helper ini
+=================
 
-This helper is loaded using the following code
+Helper ini dimuat menggunakan kode berikut
 
 ::
 
 	$this->load->helper('xml');
 
-Available Functions
-===================
+Fungsi yang Tersedia
+====================
 
-The following functions are available:
+Fungsi yang tersedia sebagai berikut:
 
 .. php:function:: xml_convert($str[, $protect_all = FALSE])
 
-	:param string $str: the text string to convert
-	:param bool $protect_all: Whether to protect all content that looks like a potential entity instead of just numbered entities, e.g. &foo;
-	:returns: XML-converted string
+	:param string $str: teks string untuk mengkonversi
+	:param bool $protect_all: Apakah melindungi semua konten yang terlihat seperti sebuah entitas potensial bukan entitas yang hanya nomor, misalnya  &foo;
+	:returns: String yang dikonversi ke XML
 	:rtype:	string
 
-	Takes a string as input and converts the following reserved XML
-	characters to entities:
+	Mengambil string sebagai masukan dan ubah karakter *reserved* XML berikut untuk entitas:
 
 	  - Ampersands: &
-	  - Less than and greater than characters: < >
-	  - Single and double quotes: ' "
-	  - Dashes: -
+	  - Karakter kurang dari dan lebih besar dari: < >
+	  - Tanda kutip tunggal dan ganda: ' "
+	  - Tanda garis: -
 
-	This function ignores ampersands if they are part of existing numbered
-	character entities, e.g. &#123;. Example::
+	Fungsi ini mengabaikan *ampersands* jika mereka adalah bagian dari 
+	entitas karakter bernomor yang ada , misalnya &#123;. Contoh::
 
-		$string = '<p>Here is a paragraph & an entity (&#123;).</p>';
+		$string = '<p>Di sini adalah sebuah paragraf & entitas (&#123;).</p>';
 		$string = xml_convert($string);
 		echo $string;
 
@@ -52,4 +50,4 @@ The following functions are available:
 
 	.. code-block:: html
 
-		&lt;p&gt;Here is a paragraph &amp; an entity (&#123;).&lt;/p&gt;
+		&lt;p&gt;Di sini adalah sebuah paragraf &amp; entitas (&#123;).&lt;/p&gt;
