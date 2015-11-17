@@ -2,7 +2,7 @@
 Download Helper
 ###############
 
-The Download Helper lets you download data to your desktop.
+*Download Helper* memungkinkan Anda mengunduh data ke desktop Anda.
 
 .. contents::
   :local:
@@ -11,46 +11,44 @@ The Download Helper lets you download data to your desktop.
 
   <div class="custom-index container"></div>
 
-Loading this Helper
-===================
+Memuat Helper ini
+=================
 
-This helper is loaded using the following code::
+Helper ini dimuat menggunakan kode berikut::
 
 	$this->load->helper('download');
 
-Available Functions
-===================
+Fungsi yang Tersedia
+====================
 
-The following functions are available:
+Fungsi yang tersedia sebagai berikut:
 
 
 .. php:function:: force_download([$filename = ''[, $data = ''[, $set_mime = FALSE]]])
 
-	:param	string	$filename: Filename
-	:param	mixed	$data: File contents
-	:param	bool	$set_mime: Whether to try to send the actual MIME type
+	:param	string	$filename: Nama file
+	:param	mixed	$data: Isi file
+	:param	bool	$set_mime: Apakah akan mencoba untuk mengirimkan jenis MIME aktual
 	:rtype:	void
 
-	Generates server headers which force data to be downloaded to your
-	desktop. Useful with file downloads. The first parameter is the **name
-	you want the downloaded file to be named**, the second parameter is the
-	file data.
+	Menghasilkan *header server* yang memaksa data yang akan didownload ke desktop Anda.  
+	Berguna dengan file download.  Parameter pertama adalah **nama yang Anda inginkan 
+	file yang didownload diberi nama**, parameterkedua adalah file data.
 
-	If you set the second parameter to NULL and ``$filename`` is an existing, readable
-	file path, then its content will be read instead.
+	Jika Anda menetapkan parameter kedua ke NULL dan ``$filename`` adalah path file 
+	yang dapat dibaca yang ada, maka isinya akan dibaca sebagai gantinya.
 
-	If you set the third parameter to boolean TRUE, then the actual file MIME type
-	(based on the filename extension) will be sent, so that if your browser has a
-	handler for that type - it can use it.
+	Jika Anda menetapkan parameter ketiga ke boolean TRUE, maka jenis file MIME yang 
+	sebenarnya (berdasarkan ekstensi nama file) yang akan dikirim, sehingga jika browser
+	Anda memiliki handler untuk jenis itu - browser dapat menggunakannya.
 
-	Example::
+	Contoh::
 
-		$data = 'Here is some text!';
+		$data = 'Berikut adalah beberapa teks!';
 		$name = 'mytext.txt';
 		force_download($name, $data);
 
-	If you want to download an existing file from your server you'll need to
-	do the following::
+	Jika Anda ingin mengunduh file yang ada dari server Anda, Anda akan perlu melakukan hal berikut::
 
-		// Contents of photo.jpg will be automatically read
+		// Isi dari photo.jpg akan otomatis dibaca
 		force_download('/path/to/photo.jpg', NULL);
