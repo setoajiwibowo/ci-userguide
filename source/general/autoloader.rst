@@ -1,27 +1,26 @@
 ########################
-Auto-loading SUmber Daya
+Auto-loading Sumber Daya
 ########################
 
-CodeIgniter comes with an "Auto-load" feature that permits libraries,
-helpers, and models to be initialized automatically every time the
-system runs. If you need certain resources globally throughout your
-application you should consider auto-loading them for convenience.
+CodeIgniter dilengkapi dengan fitur "Auto-load" yang mengijinkan *library*, *helper*,
+dan *model* diinisialisasi secara otomatis setiap kali sistem berjalan.  
+Jika Anda membutuhkan sumber daya tertentu secara global di seluruh aplikasi Anda, 
+Anda harus mempertimbangkan fitur *auto-loading* untuk kenyamanan.
 
-The following items can be loaded automatically:
+Item berikut dapat dimuat secara otomatis:
 
--  Classes found in the *libraries/* directory
--  Helper files found in the *helpers/* directory
--  Custom config files found in the *config/* directory
--  Language files found in the *system/language/* directory
--  Models found in the *models/* folder
+-  *Classes* ditemukan di direktori *libraries/*
+-  File *Helper* ditemukan di direktori *helpers/*
+-  File *Custom config* ditemukan di direktori *config/*
+-  File *Language* ditemukan di direktori *system/language/*
+-  *Models* ditemukan di direktori *models/*
 
-To autoload resources, open the **application/config/autoload.php**
-file and add the item you want loaded to the autoload array. You'll
-find instructions in that file corresponding to each type of item.
+Untuk melakukan *autoload* sumber daya, buka file **application/config/autoload.php**
+dan tambahkan item yang ingin dimuat ke *array autoload*.  Anda akan menemukan petunjuk 
+dalam file yang sesuai untuk setiap jenis item.
 
-.. note:: Do not include the file extension (.php) when adding items to
-	the autoload array.
+.. note:: Jangan masukkan ekstensi file (.php) ketika menambahkan item ke *array autoload*.
 
-Additionally, if you want CodeIgniter to use a `Composer <https://getcomposer.org/>`_
-auto-loader, just set ``$config['composer_autoload']`` to ``TRUE`` or
-a custom path in **application/config/config.php**.
+Selain itu, jika Anda ingin CodeIgniter menggunakan sebuah `Composer <https://getcomposer.org/>`_
+*auto-loader*, hanya atur ``$config['composer_autoload']`` menjadi ``TRUE`` atau
+sebuah *custom path* di **application/config/config.php**.
