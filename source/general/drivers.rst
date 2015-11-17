@@ -2,39 +2,36 @@
 Menggunakan Driver CodeIgniter
 ##############################
 
-Drivers are a special type of Library that has a parent class and any
-number of potential child classes. Child classes have access to the
-parent class, but not their siblings. Drivers provide an elegant syntax
-in your :doc:`controllers <controllers>` for libraries that benefit
-from or require being broken down into discrete classes.
+Driver adalah tipe khusus dari library yang memiliki kelas induk dan sejumlah 
+potensi anak kelas. Anak kelas memiliki akses ke Induk kelas, tetapi tidak 
+saudara kandung mereka. Drivers provide an elegant syntax in  :doc:`controllers <controllers>` 
+untuk *library* yang memanfaatkan atau memerlukan yang dibagi ke dalam kelas-kelas diskrit.
 
-Drivers are found in the *system/libraries/* directory, in their own
-sub-directory which is identically named to the parent library class.
-Also inside that directory is a subdirectory named drivers, which
-contains all of the possible child class files.
+*Drivers* ditemukan di direktori *system/libraries/*, di sub-direktori mereka sendiri yang 
+dinamai identik dengan kelas library induk. Juga di dalam direktori tersebut ada 
+subdirektori bernama driver, yang berisi semua file kelas mungkin anak.
 
-To use a driver you will initialize it within a controller using the
-following initialization method::
+Untuk menggunakan driver Anda akan menginisialisasinya di dalam controller 
+menggunakan metode inisialisasi berikut::
 
 	$this->load->driver('class_name');
 
-Where class name is the name of the driver class you want to invoke. For
-example, to load a driver named "Some_parent" you would do this::
+Di mana nama kelas adalah nama dari kelas driver yang Anda ingin memohon.  
+Misalnya, untuk memuat driver bernama "Some_parent" Anda akan melakukan ini::
 
 	$this->load->driver('some_parent');
 
-Methods of that class can then be invoked with::
+Metode kelas yang kemudian dapat dipanggil dengan::
 
 	$this->some_parent->some_method();
 
-The child classes, the drivers themselves, can then be called directly
-through the parent class, without initializing them::
+Kelas anak, driver sendiri, maka dapat disebut langsung melalui kelas induk, 
+tanpa menginisialisasi mereka::
 
 	$this->some_parent->child_one->some_method();
 	$this->some_parent->child_two->another_method();
 
-Creating Your Own Drivers
-=========================
+Membuat Driver Anda Sendiri
+===========================
 
-Please read the section of the user guide that discusses how to :doc:`create
-your own drivers <creating_drivers>`.
+Silakan baca bagian dari panduan pengguna yang membahas bagaimana :doc:`membuat driver anda sendiri <creating_drivers>`.
