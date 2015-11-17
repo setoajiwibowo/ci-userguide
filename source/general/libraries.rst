@@ -2,31 +2,31 @@
 Menggunakan Library CodeIgniter
 ###############################
 
-All of the available libraries are located in your *system/libraries/*
-directory. In most cases, to use one of these classes involves initializing
-it within a :doc:`controller <controllers>` using the following
-initialization method::
+Semua *library* yang tersedia berada dalam direktori *system/libraries/* Anda.  
+Dalam kebanyakan kasus, untuk menggunakan salah satu dari kelas-kelas ini 
+melibatkan menginisialisasinya dalam :doc:`controller <controllers>` 
+menggunakan metode inisialisasi berikut::
 
 	$this->load->library('class_name');
 
-Where 'class_name' is the name of the class you want to invoke. For
-example, to load the :doc:`Form Validation Library
-<../libraries/form_validation>` you would do this::
+Dimana 'class_name' adalah nama dari kelas yang Anda ingin memohon. Sebagai contoh, 
+untuk memuat :doc:`Library Form Validation 
+<../libraries/form_validation>` Anda akan melakukan ini::
 
 	$this->load->library('form_validation');
 
-Once initialized you can use it as indicated in the user guide page
-corresponding to that class.
+Setelah diinisialisasi Anda dapat menggunakannya seperti yang ditunjukkan 
+di halaman buku petunjuk yang sesuai dengan kelas itu.
 
-Additionally, multiple libraries can be loaded at the same time by
-passing an array of libraries to the load method.
+Selain itu, beberapa *library* dapat dimuat pada saat yang sama dengan melewati 
+sebuah *array library* dengan metode *load*.
 
-Example::
+Contoh::
 
 	$this->load->library(array('email', 'table'));
 
-Creating Your Own Libraries
-===========================
+Membuat Library Anda Sendiri
+============================
 
-Please read the section of the user guide that discusses how to
-:doc:`create your own libraries <creating_libraries>`.
+Silakan baca bagian dari panduan pengguna yang membahas bagaimana
+:doc:`membuat library anda sendiri <creating_libraries>`.
