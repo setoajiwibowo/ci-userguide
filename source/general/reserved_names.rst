@@ -1,27 +1,26 @@
-##############
-Reserved Names
-##############
+##################
+Nama-nama Reserved
+##################
 
-In order to help out, CodeIgniter uses a series of function, method,
-class and variable names in its operation. Because of this, some names
-cannot be used by a developer. Following is a list of reserved names
-that cannot be used.
+Untuk membantu, CodeIgniter menggunakan serangkaian fungsi, metode, kelas dan 
+nama-nama variabel dalam operasi. Karena ini, beberapa nama tidak dapat 
+digunakan oleh pengembang. Berikut ini adalah daftar nama *reserved* 
+yang tidak dapat digunakan.
 
-Controller names
-----------------
+Nama-nama Controller
+--------------------
 
-Since your controller classes will extend the main application
-controller you must be careful not to name your methods identically to
-the ones used by that class, otherwise your local methods will
-override them. The following is a list of reserved names. Do not name
-your controller any of these:
+Sejak kelas *controller* Anda akan memperpanjang controller aplikasi utama Anda 
+harus berhati-hati jangan menamai metode Anda identik dengan yang digunakan 
+oleh kelas itu, sebaliknya metode lokal Anda akan menimpa mereka. Berikut 
+ini adalah daftar nama *reserved*. Jangan menamai *controller* anda dengan ini:
 
 -  CI_Controller
 -  Default
 -  index
 
-Functions
----------
+Fungsi
+------
 
 -  :php:func:`is_php()`
 -  :php:func:`is_really_writable()`
@@ -43,15 +42,15 @@ Functions
 -  ``_exception_handler()``
 -  ``_stringify_attributes()``
 
-Variables
----------
+Variabel
+--------
 
 -  ``$config``
 -  ``$db``
 -  ``$lang``
 
-Constants
----------
+Konstan
+-------
 
 -  ENVIRONMENT
 -  FCPATH
