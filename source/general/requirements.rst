@@ -2,7 +2,7 @@
 Kebutuhan Server
 ################
 
-`PHP <http://php.net/>`_ versi 5.4 atau terbaru lebih dianjurkan.
+`PHP <http://php.net/>`_ versi 5.5 atau terbaru lebih dianjurkan.
 
 CodeIgniter seharusnya bisa bekerja pada 5.2.4 juga, tapi kami sangat 
 menyarankan Anda untuk tidak menjalankan PHP versi lama, karena masalah 
