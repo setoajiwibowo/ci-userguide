@@ -1,52 +1,47 @@
-##############################
-Penanganan Beberapa Lingkungan
-##############################
+###############################
+Penanganan Beberapa Environment
+###############################
 
-Developers often desire different system behavior depending on whether
-an application is running in a development or production environment.
-For example, verbose error output is something that would be useful
-while developing an application, but it may also pose a security issue
-when "live".
+Pengembang sering menginginkan sistem perilaku yang berbeda tergantung pada apakah 
+aplikasi berjalan dalam pengembangan atau produksi lingkungan. Sebagai contoh, 
+keluaran kesalahan *verbose* adalah sesuatu yang akan berguna ketika mengembangkan 
+sebuah aplikasi, tetapi juga dapat menimbulkan masalah keamanan ketika "live".
 
-The ENVIRONMENT Constant
-========================
+Konstan ENVIRONMENT
+===================
 
-By default, CodeIgniter comes with the environment constant set to use
-the value provided in ``$_SERVER['CI_ENV']``, otherwise defaults to
-'development'. At the top of index.php, you will see::
+Secara default, CodeIgniter dilengkapi dengan set konstan *environment* 
+untuk menggunakan nilai yang diberikan di ``$_SERVER['CI_ENV']``, Jika tidak default menjadi 
+'development'. Pada bagian atas **index.php**, Anda akan lihat::
 
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
-This server variable can be set in your .htaccess file, or Apache 
-config using `SetEnv <https://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv>`_. 
-Alternative methods are available for nginx and other servers, or you can 
-remove this logic entirely and set the constant based on the server's IP address.
+Variabel server ini dapat diatur dalam file .htaccess, atau Apache config menggunakan `SetEnv <https://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv>`_. 
+Metode alternatif tersedia untuk nginx dan server lain, atau Anda dapat menghilangkan 
+logika ini sepenuhnya dan mengatur konstan berdasarkan alamat IP server.
 
-In addition to affecting some basic framework behavior (see the next
-section), you may use this constant in your own development to
-differentiate between which environment you are running in.
+Selain mempengaruhi beberapa perilaku framework (Lihat bagian berikutnya), 
+Anda dapat menggunakan konstan ini dalam pengembangan Anda sendiri untuk 
+membedakan antara lingkungan yang Anda jalankan.
 
-Effects On Default Framework Behavior
-=====================================
+Efek pada Perilaku Default Framework
+====================================
 
-There are some places in the CodeIgniter system where the ENVIRONMENT
-constant is used. This section describes how default framework behavior
-is affected.
+Ada beberapa tempat di sistem CodeIgniter di mana konstan *ENVIRONMENT* digunakan. 
+Bagian ini menjelaskan bagaimana perilaku default *framework* terpengaruh.
 
-Error Reporting
----------------
-
-Setting the ENVIRONMENT constant to a value of 'development' will cause
-all PHP errors to be rendered to the browser when they occur.
-Conversely, setting the constant to 'production' will disable all error
-output. Disabling error reporting in production is a :doc:`good security
-practice <security>`.
-
-Configuration Files
+Pelaporan Kesalahan
 -------------------
 
-Optionally, you can have CodeIgniter load environment-specific
-configuration files. This may be useful for managing things like
-differing API keys across multiple environments. This is described in
-more detail in the environment section of the :doc:`Config Class
-<../libraries/config>` documentation.
+Mengatur konstan ENVIRONMENT untuk nilai 'development' akan menyebabkan semua kesalahan 
+PHP yang akan diberikan ke browser ketika mereka terjadi.  Sebaliknya, pengaturan 
+konstan untuk 'production' akan menonaktifkan semua keluaran kesalahan.
+Menonaktifkan pelaporan kesalahan dalam produksi adalah sebuah :doc:`good security practice <security>`.
+
+File Konfigurasi
+-------------------
+
+Opsional, Anda dapat memiliki file konfigurasi lingkungan spesifik CodeIgniter. Ini mungkin 
+berguna untuk mengelola hal-hal seperti perbedaan kunci API di beberapa lingkungan.
+Hal ini dijelaskan secara lebih rinci di bagian lingkungan dari dokumentasi :doc:`Konfigurasi Kelas
+<../libraries/config>`.
