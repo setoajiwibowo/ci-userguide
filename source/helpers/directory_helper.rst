@@ -2,8 +2,7 @@
 Directory Helper
 ################
 
-The Directory Helper file contains functions that assist in working with
-directories.
+File *Directory Helper* berisi fungsi yang membantu dalam bekerja dengan direktori.
 
 .. contents::
   :local:
@@ -12,49 +11,47 @@ directories.
 
   <div class="custom-index container"></div>
 
-Loading this Helper
-===================
+Memuat Helper ini
+=================
 
-This helper is loaded using the following code:
-
-::
+Helper ini dimuat menggunakan kode berikut::
 
 	$this->load->helper('directory');
 
-Available Functions
-===================
+Fungsi yang Tersedia
+====================
 
-The following functions are available:
+Fungsi yang tersedia sebagai berikut:
 
 
 .. php:function:: directory_map($source_dir[, $directory_depth = 0[, $hidden = FALSE]])
 
-	:param	string	$source_dir: Path to the source directory
-	:param	int	$directory_depth: Depth of directories to traverse (0 = fully recursive, 1 = current dir, etc)
-	:param	bool	$hidden: Whether to include hidden directories
-	:returns:	An array of files
+	:param	string	$source_dir: Path ke sumber direktori
+	:param	int	$directory_depth: Kedalaman direktori untuk melintasi (0 = sepenuhnya rekursif, 1 = direktori saat ini, dll)
+	:param	bool	$hidden: Apakah akan menyertakan direktori tersembunyi
+	:returns:	Sebuah array file
 	:rtype:	array
 
-	Examples::
+	Contoh::
 
 		$map = directory_map('./mydirectory/');
 
-	.. note:: Paths are almost always relative to your main index.php file.
+	.. note:: *Paths* hampir selalu relatif terhadap file **index.php** utama Anda.
 
 
-	Sub-folders contained within the directory will be mapped as well. If
-	you wish to control the recursion depth, you can do so using the second
-	parameter (integer). A depth of 1 will only map the top level directory::
+	Sub-folder yang ada di direktori akan dipetakan juga. Jika Anda ingin mengontrol 
+	kedalaman rekursi, Anda dapat melakukannya dengan menggunakan parameter kedua (integer).
+	Sebuah kedalaman 1 hanya akan memetakan direktori tingkat atas::
 
 		$map = directory_map('./mydirectory/', 1);
 
-	By default, hidden files will not be included in the returned array. To
-	override this behavior, you may set a third parameter to true (boolean)::
+	Secara default, file yang tersembunyi tidak akan dimasukkan dalam array kembali.
+	Untuk mengubah perilaku ini, Anda dapat menetapkan parameter ketiga ke *true* (boolean)::
 
 		$map = directory_map('./mydirectory/', FALSE, TRUE);
 
-	Each folder name will be an array index, while its contained files will
-	be numerically indexed. Here is an example of a typical array::
+	Setiap nama folder akan menjadi indeks array, sementara file yang terkandung yang akan 
+	diindeks secara numerik. Berikut adalah contoh dari array khas::
 
 		Array (
 			[libraries] => Array
