@@ -2,12 +2,11 @@
 Email Helper
 ############
 
-The Email Helper provides some assistive functions for working with
-Email. For a more robust email solution, see CodeIgniter's :doc:`Email
-Class <../libraries/email>`.
+*Email Helper* menyediakan beberapa fungsi bantu untuk bekerja dengan Email.
+Untuk solusi email lebih kuat, lihat :doc:`Email
+Class <../libraries/email>` CodeIgniter.
 
-.. important:: The Email helper is DEPRECATED and is currently
-	only kept for backwards compatibility.
+.. important:: *Email helper* sudah ditinggalkan dan saat ini hanya disimpan untuk kompatibilitas versi sebelumnya.
 
 .. contents::
   :local:
@@ -16,60 +15,60 @@ Class <../libraries/email>`.
 
   <div class="custom-index container"></div>
 
-Loading this Helper
-===================
+Memuat Helper ini
+=================
 
-This helper is loaded using the following code::
+Helper ini dimuat menggunakan kode berikut::
 
 	$this->load->helper('email');
 
-Available Functions
-===================
+Fungsi yang Tersedia
+====================
 
-The following functions are available:
+Fungsi yang tersedia sebagai berikut:
 
 
 .. php:function:: valid_email($email)
 
-	:param	string	$email: E-mail address
-	:returns:	TRUE if a valid email is supplied, FALSE otherwise
+	:param	string	$email: Alamat email
+	:returns:	TRUE jika email yang disuplai valid, jika tidak FALSE
 	:rtype:	bool
 
-	Checks if the input is a correctly formatted e-mail address. Note that is
-	doesn't actually prove that the address will be able recieve mail, but
-	simply that it is a validly formed address.
+	Memeriksa apakah input adalah alamat e-mail diformat dengan benar. Catatan fungsi ini 
+	tidak benar-benar membuktikan bahwa alamat akan dapat menerima email, tetapi hanya 
+	menyatakan bahwa alamat itu adalah alamat sah.
 
-	Example::
+	Contoh::
 
 		if (valid_email('email@somesite.com'))
 		{
-			echo 'email is valid';
+			echo 'email valid';
 		}
 		else
 		{
-			echo 'email is not valid';
+			echo 'email tidak valid';
 		}
 
-	.. note:: All that this function does is to use PHP's native ``filter_var()``::
+	.. note:: Semua fungsi ini menggunakan PHP's native ``filter_var()``::
 
 		(bool) filter_var($email, FILTER_VALIDATE_EMAIL);
 
 .. php:function:: send_email($recipient, $subject, $message)
 
-	:param	string	$recipient: E-mail address
-	:param	string	$subject: Mail subject
-	:param	string	$message: Message body
-	:returns:	TRUE if the mail was successfully sent, FALSE in case of an error
+	:param	string	$recipient: Alamat Email
+	:param	string	$subject: Judul Email
+	:param	string	$message: Pesan
+	:returns:	TRUE jika email berhasil dikirim, FALSE jika ada kesalahan
 	:rtype:	bool
 
-	Sends an email using PHP's native `mail() <http://php.net/function.mail>`_
+	Mengirim email menggunakan PHP's native `mail() <http://php.net/function.mail>`_
 	function.
 
-	.. note:: All that this function does is to use PHP's native ``mail``
+	.. note:: Semua fungsi ini menggunakan PHP's native ``mail``
 
 		::
 
 			mail($recipient, $subject, $message);
 
-	For a more robust email solution, see CodeIgniter's :doc:`Email Library
-	<../libraries/email>`.
+	Untuk solusi email lebih kuat, lihat :doc:`Email Library
+	<../libraries/email>` CodeIgniter.
