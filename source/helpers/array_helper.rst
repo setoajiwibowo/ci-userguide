@@ -2,7 +2,7 @@
 Array Helper
 ############
 
-File Array Helper berisi fungsi yang membantu dalam bekerja dengan array.
+File *Array Helper* berisi fungsi yang membantu dalam bekerja dengan array.
 
 .. contents::
   :local:
