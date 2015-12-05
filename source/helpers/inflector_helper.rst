@@ -2,8 +2,7 @@
 Inflector Helper
 ################
 
-The Inflector Helper file contains functions that permits you to change
-words to plural, singular, camel case, etc.
+File *Inflector Helper* berisi fungsi yang memungkinkan Anda untuk mengubah kata-kata untuk jamak, tunggal, kasus *camel*, dll.
 
 .. contents::
   :local:
@@ -12,85 +11,85 @@ words to plural, singular, camel case, etc.
 
   <div class="custom-index container"></div>
 
-Loading this Helper
-===================
+Memuat Helper ini
+=================
 
-This helper is loaded using the following code::
+Helper ini dimuat menggunakan kode berikut::
 
 	$this->load->helper('inflector');
 
-Available Functions
-===================
+Fungsi yang Tersedia
+====================
 
-The following functions are available:
+Fungsi yang tersedia sebagai berikut:
 
 
 .. php:function:: singular($str)
 
-	:param	string	$str: Input string
-	:returns:	A singular word
+	:param	string	$str: Masukan string
+	:returns:	Sebuah kata tunggal
 	:rtype:	string
 
-	Changes a plural word to singular. Example::
+	Perubahan kata jamak untuk tunggal.  Contoh::
 
-		echo singular('dogs'); // Prints 'dog'
+		echo singular('dogs'); // Mencetak 'dog'
 
 .. php:function:: plural($str)
 
-	:param	string	$str: Input string
-	:returns:	A plular word
+	:param	string	$str: Masukan string
+	:returns:	Sebuah kata jamak
 	:rtype:	string
 
-	Changes a singular word to plural. Example::
+	Perubahan kata tunggal untuk jamak.  Contoh::
 
-		echo plural('dog'); // Prints 'dogs'
+		echo plural('dog'); // Mencetak 'dogs'
 
 .. php:function:: camelize($str)
 
-	:param	string	$str: Input string
+	:param	string	$str: Masukan string
 	:returns:	Camelized string
 	:rtype:	string
 
-	Changes a string of words separated by spaces or underscores to camel
-	case. Example::
+	Perubahan serangkaian kata-kata yang dipisahkan oleh spasi atau garis 
+	bawah untuk kasus *camel*. Contoh::
 
-		echo camelize('my_dog_spot'); // Prints 'myDogSpot'
+		echo camelize('my_dog_spot'); // Mencetak 'myDogSpot'
 
 .. php:function:: underscore($str)
 
-	:param	string	$str: Input string
-	:returns:	String containing underscores instead of spaces
+	:param	string	$str: Masukan string
+	:returns:	String yang berisi garis bawah bukan spasi
 	:rtype:	string
 
-	Takes multiple words separated by spaces and underscores them.
-	Example::
+	Dibutuhkan beberapa kata yang dipisahkan oleh spasi dan menggarisbawahinya. 
+	Contoh::
 
-		echo underscore('my dog spot'); // Prints 'my_dog_spot'
+		echo underscore('my dog spot'); // Mencetak 'my_dog_spot'
 
 .. php:function:: humanize($str[, $separator = '_'])
 
-	:param	string	$str: Input string
-	:param	string	$separator: Input separator
-	:returns:	Humanized string
+	:param	string	$str: Masukan string
+	:param	string	$separator: Pemisah masukan
+	:returns:	String yang manusiawi
 	:rtype:	string
 
-	Takes multiple words separated by underscores and adds spaces between
-	them. Each word is capitalized.
+	Dibutuhkan beberapa kata yang dipisahkan oleh garis bawah dan menambahkan spasi 
+	di antara mereka.  Setiap kata dikapitalisasi.
 
-	Example::
+	Contoh::
 
-		echo humanize('my_dog_spot'); // Prints 'My Dog Spot'
+		echo humanize('my_dog_spot'); // Mencetak 'My Dog Spot'
 
-	To use dashes instead of underscores::
+	Untuk menggunakan strip bukan garis bawah::
 
-		echo humanize('my-dog-spot', '-'); // Prints 'My Dog Spot'
+		echo humanize('my-dog-spot', '-'); // Mencetak 'My Dog Spot'
 
 .. php:function:: is_countable($word)
 
-	:param	string	$word: Input string
-	:returns:	TRUE if the word is countable or FALSE if not
+	:param	string	$word: Masukan string
+	:returns:	TRUE jika kata tersebut dapat dihitung atau FALSE jika tidak
 	:rtype:	bool
 
-	Checks if the given word has a plural version. Example::
+	Cek jika kata yang diberikan memiliki versi plural. Contoh::
 
-		is_countable('equipment'); // Returns FALSE
+		is_countable('equipment'); // Kembali FALSE

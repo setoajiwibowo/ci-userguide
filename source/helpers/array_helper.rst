@@ -2,8 +2,7 @@
 Array Helper
 ############
 
-The Array Helper file contains functions that assist in working with
-arrays.
+File *Array Helper* berisi fungsi yang membantu dalam bekerja dengan array.
 
 .. contents::
   :local:
@@ -12,122 +11,118 @@ arrays.
 
   <div class="custom-index container"></div>
 
-Loading this Helper
-===================
+Memuat Helper ini
+=================
 
-This helper is loaded using the following code::
+Helper ini dimuat menggunakan kode berikut::
 
 	$this->load->helper('array');
 
 
-Available Functions
-===================
+Fungsi yang Tersedia
+====================
 
-The following functions are available:
+Fungsi yang tersedia sebagai berikut:
 
 
 .. php:function:: element($item, $array[, $default = NULL])
 
-	:param	string	$item: Item to fetch from the array
-	:param	array	$array: Input array
-	:param	bool	$default: What to return if the array isn't valid
-	:returns:	NULL on failure or the array item.
-	:rtype:	mixed
+	:param	string	$item: Item untuk mengambil dari array
+	:param	array	$array: Masukan array
+	:param	bool	$default: Apa yang harus kembali jika array tidak valid
+	:returns:	NULL pada kegagalan array item.
+	:rtype:	campur
 
-	Lets you fetch an item from an array. The function tests whether the
-	array index is set and whether it has a value. If a value exists it is
-	returned. If a value does not exist it returns NULL, or whatever you've
-	specified as the default value via the third parameter.
+	Memungkinkan Anda mengambil item dari array.  Fungsi ini melakukan tes apakah 
+	indeks array diatur dan apakah itu memiliki nilai. Jika nilai ada itu dikembalikan.  
+	Jika nilai tidak ada itu kembali NULL, atau apa pun yang Anda ditetapkan 
+	sebagai nilai default melalui parameter ketiga.
 
-	Example::
+	Contoh::
 
 		$array = array(
-			'color'	=> 'red',
-			'shape'	=> 'round',
-			'size'	=> ''
+			'warna'	=> 'merah',
+			'bentuk'	=> 'bulat',
+			'ukuran'	=> ''
 		);
 
-		echo element('color', $array); // returns "red"
-		echo element('size', $array, 'foobar'); // returns "foobar"
+		echo element('warna', $array); // kembali "merah"
+		echo element('ukuran', $array, 'foobar'); // kembali "foobar"
 
 
 .. php:function:: elements($items, $array[, $default = NULL])
 
-	:param	string	$item: Item to fetch from the array
-	:param	array	$array: Input array
-	:param	bool	$default: What to return if the array isn't valid
-	:returns:	NULL on failure or the array item.
-	:rtype:	mixed
+	:param	string	$item: Item untuk mengambil dari array
+	:param	array	$array: Masukan array
+	:param	bool	$default:  Apa yang harus kembali jika array tidak valid
+	:returns:	NULL pada kegagalan array item.
+	:rtype:	campur
 
-	Lets you fetch a number of items from an array. The function tests
-	whether each of the array indices is set. If an index does not exist it
-	is set to NULL, or whatever you've specified as the default value via
-	the third parameter.
+	Memungkinkan Anda mengambil sejumlah item dari array. Fungsi ini melakukan tes 
+	apakah masing-masing indeks array sudah diatur. Jika indeks tidak ada diatur ke NULL, 
+	atau apa pun yang Anda ditetapkan sebagai nilai default melalui parameter ketiga.
 
-	Example::
+	Contoh::
 
 		$array = array(
-			'color' => 'red',
-			'shape' => 'round',
+			'warna' => 'merah',
+			'bentuk' => 'bulat',
 			'radius' => '10',
 			'diameter' => '20'
 		);
 
-		$my_shape = elements(array('color', 'shape', 'height'), $array);
+		$my_shape = elements(array('warna', 'bentuk', 'tinggi'), $array);
 
-	The above will return the following array::
+	Di atas akan mengembalikan array berikut::
 
 		array(
-			'color' => 'red',
-			'shape' => 'round',
-			'height' => NULL
+			'warna' => 'merah',
+			'bentuk' => 'bulat',
+			'tinggi' => NULL
 		);
 
-	You can set the third parameter to any default value you like.
+	Anda dapat mengatur parameter ketiga untuk setiap nilai default yang Anda suka.
 	::
 
-		 $my_shape = elements(array('color', 'shape', 'height'), $array, 'foobar');
+		 $my_shape = elements(array('warna', 'bentuk', 'tinggi'), $array, 'foobar');
 
-	The above will return the following array::
+	Di atas akan mengembalikan array berikut::
 
 		array(     
-			'color' 	=> 'red',
-			'shape' 	=> 'round',
-			'height'	=> 'foobar'
+			'warna' 	=> 'merah',
+			'bentuk' 	=> 'bulat',
+			'tinggi'	=> 'foobar'
 		);
 
-	This is useful when sending the ``$_POST`` array to one of your Models.
-	This prevents users from sending additional POST data to be entered into
-	your tables.
+	Hal ini berguna ketika mengirim ``$_POST`` array ke salah satu Model Anda.  Ini mencegah pengguna mengirimkan data POST tambahan yang akan dimasukkan ke dalam tabel Anda.
 
 	::
 
 		$this->load->model('post_model');
 		$this->post_model->update(
-			elements(array('id', 'title', 'content'), $_POST)
+			elements(array('id', 'judul', 'isi'), $_POST)
 		);
 
-	This ensures that only the id, title and content fields are sent to be
-	updated.
+	Hal ini memastikan bahwa hanya id, judul dan isi yang dikirim untuk diperbarui.
 
 
 .. php:function:: random_element($array)
 
-	:param	array	$array: Input array
-	:returns:	A random element from the array
-	:rtype:	mixed
+	:param	array	$array: Masukan array
+	:returns:	Unsur acak dari array
+	:rtype:	campur
 
-	Takes an array as input and returns a random element from it.
+	Membawa sebuah array sebagai masukan dan mengembalikan elemen acak dari itu.
 
-	Usage example::
+	Contoh penggunaan::
 
 		$quotes = array(
-			"I find that the harder I work, the more luck I seem to have. - Thomas Jefferson",
-			"Don't stay in bed, unless you can make money in bed. - George Burns",
-			"We didn't lose the game; we just ran out of time. - Vince Lombardi",
-			"If everything seems under control, you're not going fast enough. - Mario Andretti",
-			"Reality is merely an illusion, albeit a very persistent one. - Albert Einstein",
-			"Chance favors the prepared mind - Louis Pasteur"
+			"Saya menemukan bahwa semakin keras saya bekerja, semakin keberuntungan saya tampaknya memiliki. - Thomas Jefferson",
+			"Tidak tinggal di tempat tidur, kecuali Anda dapat membuat uang di tempat tidur. - George Burns",
+			"Kami tidak kehilangan permainan, kami hanya kehabisan waktu. - Vince Lombardi",
+			"Jika semuanya tampak di bawah kontrol, Anda tidak akan cukup cepat. - Mario Andretti ",
+			"Realitas hanyalah ilusi, meskipun yang sangat gigih. - Albert Einstein",
+			"Kesempatan nikmat pikiran disiapkan. - Louis Pasteur"
 		);
 
 		echo random_element($quotes);

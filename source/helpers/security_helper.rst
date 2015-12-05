@@ -2,7 +2,7 @@
 Security Helper
 ###############
 
-The Security Helper file contains security related functions.
+File *Security Helper* berisi fungsi keamanan terkait.
 
 .. contents::
   :local:
@@ -11,96 +11,93 @@ The Security Helper file contains security related functions.
 
   <div class="custom-index container"></div>
 
-Loading this Helper
-===================
+Memuat Helper ini
+=================
 
-This helper is loaded using the following code::
+Helper ini dimuat menggunakan kode berikut::
 
 	$this->load->helper('security');
 
-Available Functions
-===================
+Fungsi yang Tersedia
+====================
 
-The following functions are available:
+Fungsi yang tersedia sebagai berikut:
 
 
 .. php:function:: xss_clean($str[, $is_image = FALSE])
 
-	:param	string	$str: Input data
-	:param	bool	$is_image: Whether we're dealing with an image
+	:param	string	$str: Masukan data
+	:param	bool	$is_image: Apakah kita sedang berhadapan dengan gambar
 	:returns:	XSS-clean string
 	:rtype:	string
 
-	Provides Cross Site Script Hack filtering.
+	Memberikan penyaringan *Cross Site Script Hack*.
 
-	This function is an alias for ``CI_Input::xss_clean()``. For more info,
-	please see the :doc:`Input Library <../libraries/input>` documentation.
+	Fungsi ini adalah alias untuk ``CI_Input::xss_clean()``. Untuk info lebih lanjut, 
+	silakan lihat dokumentasi :doc:`Input Library <../libraries/input>`.
 
 .. php:function:: sanitize_filename($filename)
 
-	:param	string	$filename: Filename
-	:returns:	Sanitized file name
+	:param	string	$filename: Nama file
+	:returns:	Nama file yang dibersihkan
 	:rtype:	string
 
-	Provides protection against directory traversal.
+	Memberikan perlindungan terhadap direktori traversal.
 
-	This function is an alias for ``CI_Security::sanitize_filename()``.
-	For more info, please see the :doc:`Security Library <../libraries/security>`
-	documentation.
+	Fungsi ini adalah alias untuk ``CI_Security::sanitize_filename()``.
+	Untuk info lebih lanjut, silakan lihat dokumentasi :doc:`Security Library <../libraries/security>`.
 
 
 .. php:function:: do_hash($str[, $type = 'sha1'])
 
-	:param	string	$str: Input
-	:param	string	$type: Algorithm
+	:param	string	$str: Masukan
+	:param	string	$type: Algoritma
 	:returns:	Hex-formatted hash
 	:rtype:	string
 
-	Permits you to create one way hashes suitable for encrypting
-	passwords. Will use SHA1 by default.
+	Memungkinkan Anda untuk membuat salah satu cara *hash* yang cocok untuk mengenkripsi password. 
+	Akan menggunakan SHA1 secara default.
 
-	See `hash_algos() <http://php.net/function.hash_algos>`_
-	for a full list of supported algorithms.
+	Lihat `hash_algos() <http://php.net/function.hash_algos>`_
+	untuk daftar lengkap dari algoritma yang didukung.
 
-	Examples::
+	Contoh::
 
 		$str = do_hash($str); // SHA1
 		$str = do_hash($str, 'md5'); // MD5
 
-	.. note:: This function was formerly named ``dohash()``, which has been
-		removed in favor of ``do_hash()``.
+	.. note:: Fungsi ini sebelumnya bernama ``dohash()``, yang telah dihapus dalam mendukung ``do_hash()``.
 
-	.. note:: This function is DEPRECATED. Use the native ``hash()`` instead.
+	.. note:: Fungsi ini sudah ditinggalkan. Gunakan native ``hash()``
 
 
 .. php:function:: strip_image_tags($str)
 
-	:param	string	$str: Input string
-	:returns:	The input string with no image tags
+	:param	string	$str: Masukan string
+	:returns:	Input string dengan tidak ada tag gambar
 	:rtype:	string
 
-	This is a security function that will strip image tags from a string.
-	It leaves the image URL as plain text.
+	Ini adalah fungsi keamanan yang akan men-strip tag gambar dari string.  
+	Ia meninggalkan URL gambar sebagai teks biasa.
 
-	Example::
+	Contoh::
 
 		$string = strip_image_tags($string);
 
-	This function is an alias for ``CI_Security::strip_image_tags()``. For
-	more info, please see the :doc:`Security Library <../libraries/security>`
-	documentation.
+	Fungsi ini adalah alias untuk ``CI_Security::strip_image_tags()``. 
+	Untuk info lebih lanjut, silakan lihat dokumentasi :doc:`Security Library <../libraries/security>`.
 
 
 .. php:function:: encode_php_tags($str)
 
-	:param	string	$str: Input string
+	:param	string	$str: Masukan string
 	:returns:	Safely formatted string
 	:rtype:	string
 
-	This is a security function that converts PHP tags to entities.
+	Ini adalah fungsi keamanan yang mengubah tag PHP untuk entitas.
 
-	.. note:: :php:func:`xss_clean()` does this automatically, if you use it.
+	.. note:: :php:func:`xss_clean()` melakukan ini secara otomatis, jika Anda menggunakannya.
 
-	Example::
+	Contoh::
 
 		$string = encode_php_tags($string);
