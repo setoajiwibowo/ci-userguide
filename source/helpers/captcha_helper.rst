@@ -2,8 +2,8 @@
 CAPTCHA Helper
 ##############
 
-The CAPTCHA Helper file contains functions that assist in creating
-CAPTCHA images.
+File *CAPTCHA Helper* berisi fungsi yang membantu dalam menciptakan
+gambar CAPTCHA.
 
 .. contents::
   :local:
@@ -12,20 +12,20 @@ CAPTCHA images.
 
   <div class="custom-index container"></div>
 
-Loading this Helper
-===================
+Memuat Helper ini
+=================
 
-This helper is loaded using the following code::
+Helper ini dimuat menggunakan kode berikut::
 
 	$this->load->helper('captcha');
 
-Using the CAPTCHA helper
-========================
+Menggunakan CAPTCHA Helper
+==========================
 
-Once loaded you can generate a CAPTCHA like this::
+Setelah dimuat Anda dapat menghasilkan sebuah CAPTCHA seperti ini::
 
 	$vals = array(
-		'word'		=> 'Random word',
+		'word'		=> 'Kata acak',
 		'img_path'	=> './captcha/',
 		'img_url'	=> 'http://example.com/captcha/',
 		'font_path'	=> './path/to/fonts/texb.ttf',
@@ -37,7 +37,7 @@ Once loaded you can generate a CAPTCHA like this::
 		'img_id'	=> 'Imageid',
 		'pool'		=> '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
 
-		// White background and border, black text and red grid
+		// Latar belakang dan border berwarna putih, teks hitam dan grid merah
 		'colors'	=> array(
 			'background' => array(255, 255, 255),
 			'border' => array(255, 255, 255),
@@ -49,32 +49,23 @@ Once loaded you can generate a CAPTCHA like this::
 	$cap = create_captcha($vals);
 	echo $cap['image'];
 
--  The captcha function requires the GD image library.
--  Only the **img_path** and **img_url** are required.
--  If a **word** is not supplied, the function will generate a random
-   ASCII string. You might put together your own word library that you
-   can draw randomly from.
--  If you do not specify a path to a TRUE TYPE font, the native ugly GD
-   font will be used.
--  The "captcha" directory must be writable
--  The **expiration** (in seconds) signifies how long an image will remain
-   in the captcha folder before it will be deleted. The default is two
-   hours.
--  **word_length** defaults to 8, **pool** defaults to '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
--  **font_size** defaults to 16, the native GD font has a size limit. Specify a "true type" font for bigger sizes.
--  The **img_id** will be set as the "id" of the captcha image.
--  If any of the **colors** values is missing, it will be replaced by the default.
+-  Fungsi captcha memerlukan *GD image library*.
+-  Hanya **img_path** dan **img_url** yang dibutuhkan.
+-  Jika **word** tidak diberikan, fungsi akan menghasilkan string ASCII acak. Anda mungkin mengumpulkan perpustakaan kata Anda sendiri bahwa Anda dapat menggambar secara acak.
+-  Jika Anda tidak menentukan path untuk *TRUE TYPE font*, font GD jelek asli akan digunakan.
+-  Direktori "captcha" harus dapat ditulis
+-  **expiration** (dalam detik) menandakan berapa lama gambar akan tetap berada di captcha folder sebelum akan dihapus. Default adalah dua jam.
+-  **word_length** defaultnya 8, **pool** defaultnya '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+-  **font_size** defaultnya 16, font GD asli memiliki batas ukuran. Tentukan font "true type" untuk ukuran lebih besar.
+-  **img_id** akan ditetapkan sebagai "id" dari gambar captcha.
+-  Jika salah satu nilai **colors** hilang, itu akan digantikan oleh default.
 
-Adding a Database
------------------
+Menambahkan Database
+--------------------
 
-In order for the captcha function to prevent someone from submitting,
-you will need to add the information returned from ``create_captcha()``
-to your database. Then, when the data from the form is submitted by
-the user you will need to verify that the data exists in the database
-and has not expired.
+Agar fungsi captcha untuk mencegah seseorang dari mengirimkan, Anda akan perlu menambahkan informasi kembali dari ``create_captcha()`` ke database Anda.  Kemudian, ketika data dari formulir dikirimkan oleh pengguna Anda akan perlu untuk memverifikasi bahwa data yang ada dalam database dan belum kedaluwarsa.
 
-Here is a table prototype::
+Berikut ini adalah prototipe tabel::
 
 	CREATE TABLE captcha (  
 		captcha_id bigint(13) unsigned NOT NULL auto_increment,  
@@ -85,8 +76,8 @@ Here is a table prototype::
 		KEY `word` (`word`)
 	);
 
-Here is an example of usage with a database. On the page where the
-CAPTCHA will be shown you'll have something like this::
+Berikut adalah contoh penggunaan dengan database. Pada halaman di mana
+CAPTCHA akan ditampilkan Anda akan memiliki sesuatu seperti ini::
 
 	$this->load->helper('captcha');
 	$vals = array(     
@@ -104,19 +95,18 @@ CAPTCHA will be shown you'll have something like this::
 	$query = $this->db->insert_string('captcha', $data);
 	$this->db->query($query);
 
-	echo 'Submit the word you see below:';
+	echo 'Submit kata yang Anda lihat di bawah:';
 	echo $cap['image'];
 	echo '<input type="text" name="captcha" value="" />';
 
-Then, on the page that accepts the submission you'll have something like
-this::
+Kemudian, pada halaman yang menerima pengajuan Anda akan memiliki sesuatu seperti ini::
 
 	// First, delete old captchas
-	$expiration = time() - 7200; // Two hour limit
+	$expiration = time() - 7200; // Batas dua jam
 	$this->db->where('captcha_time < ', $expiration)
 		->delete('captcha');
 
-	// Then see if a captcha exists:
+	// Kemudian lihat apakah captcha ada:
 	$sql = 'SELECT COUNT(*) AS count FROM captcha WHERE word = ? AND ip_address = ? AND captcha_time > ?';
 	$binds = array($_POST['captcha'], $this->input->ip_address(), $expiration);
 	$query = $this->db->query($sql, $binds);
@@ -124,26 +114,24 @@ this::
 
 	if ($row->count == 0)
 	{     
-		echo 'You must submit the word that appears in the image.';
+		echo 'Anda harus men-submit kata yang muncul dalam gambar.';
 	}
 
-Available Functions
-===================
+Fungsi yang Tersedia
+====================
 
-The following functions are available:
+Fungsi yang tersedia sebagai berikut:
 
 .. php:function:: create_captcha([$data = ''[, $img_path = ''[, $img_url = ''[, $font_path = '']]]])
 
-	:param	array	$data: Array of data for the CAPTCHA
-	:param	string	$img_path: Path to create the image in
-	:param	string	$img_url: URL to the CAPTCHA image folder
-	:param	string	$font_path: Server path to font
+	:param	array	$data: Array data untuk CAPTCHA
+	:param	string	$img_path: Path untuk membuat gambar
+	:param	string	$img_url: URL ke folder gambar CAPTCHA
+	:param	string	$font_path: Server path untuk font
 	:returns:	array('word' => $word, 'time' => $now, 'image' => $img)
 	:rtype:	array
 
-	Takes an array of information to generate the CAPTCHA as input and
-	creates the image to your specifications, returning an array of
-	associative data about the image.
+	Mengambil informasi array untuk menghasilkan CAPTCHA sebagai masukan dan menciptakan gambar untuk spesifikasi Anda, kembali data array asosiatif tentang gambar.
 
 	::
 
@@ -153,12 +141,10 @@ The following functions are available:
 			'word'	=> CAPTCHA WORD
 		)
 
-	The **image** is the actual image tag::
+	**image** ini sebenarnya gambar tag::
 
 		<img src="http://example.com/captcha/12345.jpg" width="140" height="50" />
 
-	The **time** is the micro timestamp used as the image name without the
-	file extension. It will be a number like this: 1139612155.3422
+	**time** adalah timestamp mikro yang digunakan sebagai nama gambar tanpa ekstensi file.  Ini akan menjadi nomor seperti ini: 1139612155.3422
 
-	The **word** is the word that appears in the captcha image, which if not
-	supplied to the function, will be a random string.
+	**word** adalah kata yang muncul dalam gambar captcha, yang jika tidak diberikan ke fungsi, akan menjadi string acak.
