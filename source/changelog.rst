@@ -7,6 +7,11 @@ Version 3.1.0
 
 Release Date: Not Released
 
+-  Libraries
+
+   -  Added UNIX socket connection support to :doc:`Session Library <libraries/sessions>` 'redis' driver.
+
+
 Version 3.0.4
 =============
 
