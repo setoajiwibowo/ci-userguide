@@ -30,4 +30,4 @@ Topik Umum
 	environments
 	alternative_php
 	security
-	PHP Style Guide <styleguide>
+	Panduan Gaya PHP <styleguide>
