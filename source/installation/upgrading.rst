@@ -8,6 +8,9 @@ Silakan baca catatan upgrade sesuai dengan versi berapa yang akan Anda upgrade.
 	:titlesonly:
 
 	Upgrade dari 3.0.x ke 3.1.x <upgrade_310>
+	Upgrade dari 3.0.6 ke 3.0.7 <upgrade_307>
+	Upgrade dari 3.0.5 ke 3.0.6 <upgrade_306>
+	Upgrade dari 3.0.4 to 3.0.5 <upgrade_305>
 	Upgrade dari 3.0.3 ke 3.0.4 <upgrade_304>
 	Upgrade dari 3.0.2 ke 3.0.3 <upgrade_303>
 	Upgrade dari 3.0.1 ke 3.0.2 <upgrade_302>
