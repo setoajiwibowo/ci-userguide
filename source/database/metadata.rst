@@ -1,20 +1,20 @@
-#################
-Database Metadata
-#################
+########################
+Metadata dari Basis Data
+########################
 
 **************
-Table MetaData
+Tabel MetaData
 **************
 
-These functions let you fetch table information.
+Fungsi-fungsi ini memungkinkan Anda mengambil informasi tabel.
 
-List the Tables in Your Database
-================================
+Daftar Tabel dalam Basis Data Anda
+==================================
 
 **$this->db->list_tables();**
 
-Returns an array containing the names of all the tables in the database
-you are currently connected to. Example::
+Mengembalikan array yang berisi nama-nama dari semua tabel dalam database yang 
+sedang Anda hubungkan. Contoh::
 
 	$tables = $this->db->list_tables();
 	
@@ -24,36 +24,33 @@ you are currently connected to. Example::
 	}
 
 
-Determine If a Table Exists
+Menentukan apakah tabel ada
 ===========================
 
 **$this->db->table_exists();**
 
-Sometimes it's helpful to know whether a particular table exists before
-running an operation on it. Returns a boolean TRUE/FALSE. Usage example::
+Kadang-kadang membantu untuk mengetahui apakah tabel tertentu ada sebelum menjalankan operasi di atasnya.  Mengembalikan *boolean TRUE/FALSE*. Contoh penggunaan::
 
 	if ($this->db->table_exists('table_name'))
 	{
-		// some code...
+		// beberapa kode...
 	}
 
-.. note:: Replace *table_name* with the name of the table you are looking for.
+.. note:: Ganti *table_name* dengan nama tabel yang Anda cari.
 
 
-**************
-Field MetaData
-**************
+***************
+Bidang metadata
+***************
 
-List the Fields in a Table
-==========================
+Daftar Bidang di Tabel
+======================
 
 **$this->db->list_fields()**
 
-Returns an array containing the field names. This query can be called
-two ways:
+Mengembalikan array yang berisi nama field. Kueri ini bisa dipanggil dua cara:
 
-1. You can supply the table name and call it from the $this->db->
-object::
+1. Anda dapat menyediakan nama tabel dan menyebutnya dari obyek $this->db->::
 
 	$fields = $this->db->list_fields('table_name');
 	
@@ -62,8 +59,8 @@ object::
 		echo $field;
 	}
 
-2. You can gather the field names associated with any query you run by
-calling the function from your query result object::
+2. Anda dapat mengumpulkan nama bidang yang terkait dengan kueri yang Anda jalankan 
+dengan memanggil fungsi dari hasil objek kueri Anda::
 
 	$query = $this->db->query('SELECT * FROM some_table');
 	
@@ -73,37 +70,35 @@ calling the function from your query result object::
 	}
 
 
-Determine If a Field is Present in a Table
-==========================================
+Menentukan Jika sebuah Bidang ada dalam Tabel
+=============================================
 
 **$this->db->field_exists()**
 
-Sometimes it's helpful to know whether a particular field exists before
-performing an action. Returns a boolean TRUE/FALSE. Usage example::
+Kadang-kadang ini membantu untuk mengetahui apakah bidang tertentu ada sebelum 
+melakukan suatu tindakan.  Mengembalikan *boolean TRUE/FALSE*. Contoh penggunaan::
 
 	if ($this->db->field_exists('field_name', 'table_name'))
 	{
-		// some code...
+		// beberapa kode...
 	}
 
-.. note:: Replace *field_name* with the name of the column you are looking
-	for, and replace *table_name* with the name of the table you are
-	looking for.
+.. note:: Ganti *field_name* dengan nama kolom yang Anda cari, dan ganti *table_name* 
+dengan nama tabel yang Anda cari.
 
 
-Retrieve Field Metadata
-=======================
+Mengambil Bidang Metadata
+=========================
 
 **$this->db->field_data()**
 
-Returns an array of objects containing field information.
+Mengembalikan array objek yang berisi informasi bidang.
 
-Sometimes it's helpful to gather the field names or other metadata, like
-the column type, max length, etc.
+Kadang-kadang ini membantu untuk mengumpulkan nama bidang atau metadata lainnya, seperti jenis kolom, panjang maksimal, dll.
 
-.. note:: Not all databases provide meta-data.
+.. note:: Tidak semua database menyediakan metadata.
 
-Usage example::
+Contoh Penggunaan::
 
 	$fields = $this->db->field_data('table_name');
 	
@@ -115,16 +110,15 @@ Usage example::
 		echo $field->primary_key;
 	}
 
-If you have run a query already you can use the result object instead of
-supplying the table name::
+Jika Anda telah menjalankan kueri Anda dapat menggunakan obyek hasil bukannya 
+memasok nama tabel::
 
 	$query = $this->db->query("YOUR QUERY");
 	$fields = $query->field_data();
 
-The following data is available from this function if supported by your
-database:
+Data berikut tersedia dari fungsi ini yang didukung oleh basis data Anda:
 
--  name - column name
--  max_length - maximum length of the column
--  primary_key - 1 if the column is a primary key
--  type - the type of the column
+-  name - nama kolom
+-  max_length - panjang maksimum kolom
+-  primary_key - 1 jika kolom adalah kunci utama
+-  type - jenis kolom
