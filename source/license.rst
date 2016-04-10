@@ -1,23 +1,22 @@
 #####################
-The MIT License (MIT)
+Lisensi MIT (MIT)
 #####################
 
-Copyright (c) 2014 - 2016, British Columbia Institute of Technology
+Hak Cipta (c) 2014 - 2016, British Columbia Institute of Technology
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Izin dengan ini diberikan, gratis, untuk setiap orang yang mendapatkan salinan
+ini perangkat lunak dan dokumentasi yang terkait file ("perangkat lunak"), untuk menangani
+dalam perangkat lunak tanpa pembatasan, termasuk tanpa batasan hak-hak
+untuk menggunakan, menyalin, memodifikasi, menggabungkan, mempublikasikan, mendistribusikan, mensublisensikan, dan menjual
+salinan perangkat lunak, dan mengijinkan orang-orang kepada siapa perangkat lunak ini
+dilengkapi untuk melakukannya, sesuai dengan kondisi berikut:
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+Di atas pemberitahuan hak cipta dan pemberitahuan izin ini harus dimasukkan dalam
+Semua salinan atau bagian-bagian besar dari perangkat lunak.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+PERANGKAT LUNAK INI DISEDIAKAN "SEBAGAIMANA ADANYA", TANPA JAMINAN APAPUN, TERSURAT MAUPUN TERSIRAT,
+TERMASUK TETAPI TIDAK TERBATAS PADA JAMINAN KETERJUALAN, KESESUAIAN UNTUK TUJUAN TERTENTU DAN 
+NON PELANGGARAN. DALAM TIDAK ADA PERISTIWA PENULIS ATAU PEMEGANG HAK CIPTA AKAN BERTANGGUNG JAWAB 
+ATAS KLAIM, KERUSAKAN ATAU KEWAJIBAN LAINNYA, BAIK DALAM TINDAKAN KONTRAK, KESALAHAN ATAU 
+SEBALIKNYA, MUNCUL DARI, DARI ATAU SEHUBUNGAN DENGAN PERANGKAT LUNAK ATAU MENGGUNAKAN ATAU 
+TRANSAKSI LAINNYA DI PERANGKAT LUNAK.
