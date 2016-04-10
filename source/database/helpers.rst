@@ -1,89 +1,83 @@
 ###################
-Metode Query Helper
+Metode Kueri Helper
 ###################
 
-Information From Executing a Query
-==================================
+Informasi Dari Mengeksekusi sebuah Kueri
+========================================
 
 **$this->db->insert_id()**
 
-The insert ID number when performing database inserts.
+Nomor ID masukan saat melakukan sisipan basis data.
 
-.. note:: If using the PDO driver with PostgreSQL, or using the Interbase
-	driver, this function requires a $name parameter, which specifies the 
-	appropriate sequence to check for the insert id.
+.. note:: Jika menggunakan driver PDO dengan PostgreSQL atau menggunakan driver Interbase fungsi ini memerlukan parameter *$name* yang menentukan urutan yang tepat untuk memeriksa *insert id*.
 
 **$this->db->affected_rows()**
 
-Displays the number of affected rows, when doing "write" type queries
-(insert, update, etc.).
+Menampilkan jumlah baris yang terkena dampak ketika melakukan "write" 
+jenis kueri(insert, update dll).
 
-.. note:: In MySQL "DELETE FROM TABLE" returns 0 affected rows. The database
-	class has a small hack that allows it to return the correct number of
-	affected rows. By default this hack is enabled but it can be turned off
-	in the database driver file.
+.. note:: Di dalam MySQL "DELETE FROM TABLE" mengembalikan 0 baris yang terkena. Kelas basis data memiliki *hack* kecil yang memungkinkan untuk mengembalikan jumlah yang benar baris yang terkena dampak. Secara default *hack* ini diaktifkan tetapi dapat dimatikan dalam berkas driver basis data.
 
 **$this->db->last_query()**
 
-Returns the last query that was run (the query string, not the result).
-Example::
+Mengembalikan kueri terakhir yang dijalankan (string bukan hasilnya).
+Contoh::
 
 	$str = $this->db->last_query();
 	
-	// Produces:  SELECT * FROM sometable....
+	// Menghasilkan:  SELECT * FROM sometable....
 
 
-.. note:: Disabling the **save_queries** setting in your database
-	configuration will render this function useless.
+.. note:: Menonaktifkan **save_queries** pengaturan dalam konfigurasi basis data Anda yang akan membuat fungsi ini tidak berguna.
 
-Information About Your Database
-===============================
+Informasi Tentang Basis Data Anda
+=================================
 
 **$this->db->count_all()**
 
-Permits you to determine the number of rows in a particular table.
-Submit the table name in the first parameter. Example::
+Memungkinkan Anda untuk menentukan jumlah baris dalam tabel tertentu.
+Kirim nama tabel di parameter pertama. Contoh::
 
 	echo $this->db->count_all('my_table');
 	
-	// Produces an integer, like 25
+	// Menghasilkan sebuah integer, seperti 25
 
 **$this->db->platform()**
 
-Outputs the database platform you are running (MySQL, MS SQL, Postgres,
-etc...)::
+Keluaran platform basis data yang Anda jalankan (MySQL, MS SQL, Postgres,
+dll...)::
 
 	echo $this->db->platform();
 
 **$this->db->version()**
 
-Outputs the database version you are running::
+Keluaran versi basis data yang Anda jalankan::
 
 	echo $this->db->version();
 
-Making Your Queries Easier
-==========================
+Membuat Kueri Anda Lebih Mudah
+==============================
 
 **$this->db->insert_string()**
 
-This function simplifies the process of writing database inserts. It
-returns a correctly formatted SQL insert string. Example::
+Fungsi ini menyederhanakan proses menulis sisipan basis data. Itu
+mengembalikan string SQL insert yang diformat dengan benar. Contoh::
 
 	$data = array('name' => $name, 'email' => $email, 'url' => $url);
 	
 	$str = $this->db->insert_string('table_name', $data);
 
-The first parameter is the table name, the second is an associative
-array with the data to be inserted. The above example produces::
+Parameter pertama adalah nama tabel, yang kedua adalah asosiatif
+array dengan data yang dimasukkan. Contoh di atas menghasilkan::
 
 	INSERT INTO table_name (name, email, url) VALUES ('Rick', 'rick@example.com', 'example.com')
 
-.. note:: Values are automatically escaped, producing safer queries.
+.. note:: Nilai-nilai secara otomatis lolos, memproduksi kueri lebih aman.
 
 **$this->db->update_string()**
 
-This function simplifies the process of writing database updates. It
-returns a correctly formatted SQL update string. Example::
+Fungsi ini menyederhanakan proses menulis update basis data. Itu
+mengembalikan sebuah string update SQL yang diformat dengan benar. Contoh::
 
 	$data = array('name' => $name, 'email' => $email, 'url' => $url);
 	
@@ -91,10 +85,10 @@ returns a correctly formatted SQL update string. Example::
 	
 	$str = $this->db->update_string('table_name', $data, $where);
 
-The first parameter is the table name, the second is an associative
-array with the data to be updated, and the third parameter is the
-"where" clause. The above example produces::
+Parameter pertama adalah nama tabel, yang kedua adalah asosiatif
+array dengan data yang akan diperbarui, dan parameter ketiga klausa
+"where". Contoh di atas menghasilkan::
 
 	 UPDATE table_name SET name = 'Rick', email = 'rick@example.com', url = 'example.com' WHERE author_id = 1 AND status = 'active'
 
-.. note:: Values are automatically escaped, producing safer queries.
+.. note:: Nilai-nilai secara otomatis lolos, memproduksi kueri lebih aman.
