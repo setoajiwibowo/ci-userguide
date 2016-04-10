@@ -5,34 +5,33 @@ Panggilan Kustom Fungsi
 $this->db->call_function();
 ============================
 
-This function enables you to call PHP database functions that are not
-natively included in CodeIgniter, in a platform independent manner. For
-example, let's say you want to call the mysql_get_client_info()
-function, which is **not** natively supported by CodeIgniter. You could
-do so like this::
+Fungsi ini memungkinkan Anda untuk memanggil fungsi basis data PHP yang tidak 
+native termasuk dalam CodeIgniter dengan cara platform independen. 
+Sebagai contoh katakanlah Anda ingin memanggil fungsi mysql_get_client_info() 
+yang **tidak** native didukung oleh CodeIgniter. 
+Anda bisa melakukannya seperti ini::
 
 	$this->db->call_function('get_client_info');
 
-You must supply the name of the function, **without** the mysql\_
-prefix, in the first parameter. The prefix is added automatically based
-on which database driver is currently being used. This permits you to
-run the same function on different database platforms. Obviously not all
-function calls are identical between platforms, so there are limits to
-how useful this function can be in terms of portability.
+Anda harus menyediakan nama fungsi **tanpa** awalan mysql\_ di parameter pertama. 
+Awalan ditambahkan secara otomatis berdasarkan driver basis data saat ini yang 
+sedang digunakan. Hal ini memungkinkan Anda untuk menjalankan fungsi yang sama 
+pada platform basis data yang berbeda. Tidak semua panggilan fungsi yang 
+identik antara platform jadi ada batas untuk berapa berguna fungsi ini bisa 
+dalam hal portabilitas.
 
-Any parameters needed by the function you are calling will be added to
-the second parameter.
+Parameter yang dibutuhkan oleh fungsi yang Anda panggil akan ditambahkan ke parameter kedua.
 
 ::
 
-	$this->db->call_function('some_function', $param1, $param2, etc..);
+	$this->db->call_function('some_function', $param1, $param2, dll..);
 
-Often, you will either need to supply a database connection ID or a
-database result ID. The connection ID can be accessed using::
+Seringkali Anda akan perlu untuk menyediakan ID koneksi basis data atau ID hasil
+basis data. ID koneksi dapat diakses menggunakan::
 
 	$this->db->conn_id;
 
-The result ID can be accessed from within your result object, like this::
+Hasil ID dapat diakses dari dalam objek hasil Anda seperti ini::
 
 	$query = $this->db->query("SOME QUERY");
 	

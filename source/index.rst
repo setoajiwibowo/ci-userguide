@@ -75,7 +75,7 @@ Topik Umum
 	general/index
 
 *****************
-Referensi Library
+Referensi Librari
 *****************
 
 .. toctree::
@@ -84,9 +84,9 @@ Referensi Library
 
 	libraries/index
 
-******************
-Referensi Database
-******************
+********************
+Referensi Basis Data
+********************
 
 .. toctree::
 	:glob:
