@@ -2,25 +2,24 @@
 Memulai Cepat Database: Contoh Kode
 ###################################
 
-The following page contains example code showing how the database class
-is used. For complete details please read the individual pages
-describing each function.
+Halaman berikut berisi contoh kode yang menunjukkan bagaimana kelas basis data digunakan.
+Untuk rincian lengkap silahkan baca halaman individual yang menjelaskan 
+fungsi masing-masing.
 
-Initializing the Database Class
-===============================
+Menginisialisasi Kelas Basis Data
+=================================
 
-The following code loads and initializes the database class based on
-your :doc:`configuration <configuration>` settings::
+Berikut kode untuk me-load dan menginisialisasi kelas basis data berdasarkan 
+pengaturan :doc:`konfigurasi <configuration>` anda::
 
 	$this->load->database();
 
-Once loaded the class is ready to be used as described below.
+Setelah dimuat kelas siap untuk digunakan seperti yang dijelaskan di bawah.
 
-Note: If all your pages require database access you can connect
-automatically. See the :doc:`connecting <connecting>` page for details.
+Catatan: Jika semua halaman Anda memerlukan akses basis data Anda dapat terhubung secara otomatis. Lihat halaman :doc:`menghubungkan <connecting>` untuk rinciannya.
 
-Standard Query With Multiple Results (Object Version)
-=====================================================
+Kueri standar Dengan Beberapa Hasil (Versi Objek)
+=================================================
 
 ::
 
@@ -33,13 +32,13 @@ Standard Query With Multiple Results (Object Version)
 		echo $row->email;
 	}
 	
-	echo 'Total Results: ' . $query->num_rows();
+	echo 'Total Hasil: ' . $query->num_rows();
 
-The above result() function returns an array of **objects**. Example:
+Fungsi result() di atas mengembalikan sebuah array dari **objek**. Contoh:
 $row->title
 
-Standard Query With Multiple Results (Array Version)
-====================================================
+Kueri standar Dengan Beberapa Hasil (Versi Array)
+=================================================
 
 ::
 
@@ -52,11 +51,11 @@ Standard Query With Multiple Results (Array Version)
 		echo $row['email'];
 	}
 
-The above result_array() function returns an array of standard array
-indexes. Example: $row['title']
+Fungsi result_array() di atas mengembalikan sebuah array dari indeks array standar. 
+Contoh: $row['title']
 
-Standard Query With Single Result
-=================================
+Kueri Standar Dengan Hasil Tunggal
+==================================
 
 ::
 
@@ -64,10 +63,10 @@ Standard Query With Single Result
 	$row = $query->row();
 	echo $row->name;
 
-The above row() function returns an **object**. Example: $row->name
+Fungsi row() di atas mengembalikan sebuah **objek**. Contoh: $row->name
 
-Standard Query With Single Result (Array version)
-=================================================
+Kueri Standar Dengan Hasil Tunggal (Versi Array)
+================================================
 
 ::
 
@@ -75,11 +74,11 @@ Standard Query With Single Result (Array version)
 	$row = $query->row_array();
 	echo $row['name'];
 
-The above row_array() function returns an **array**. Example:
+Fungsi row_array() di atas mengembalikan sebuah **array**. Contoh:
 $row['name']
 
-Standard Insert
-===============
+Standard Masukan
+=================
 
 ::
 
@@ -87,11 +86,11 @@ Standard Insert
 	$this->db->query($sql);
 	echo $this->db->affected_rows();
 
-Query Builder Query
-===================
+Kueri Pembangun Kueri
+=====================
 
-The :doc:`Query Builder Pattern <query_builder>` gives you a simplified
-means of retrieving data::
+Sebuah :doc:`Pola Pembangun Kueri <query_builder>` memberi Anda cara sederhana 
+mengambil data::
 
 	$query = $this->db->get('table_name');
 	
@@ -100,12 +99,12 @@ means of retrieving data::
 		echo $row->title;
 	}
 
-The above get() function retrieves all the results from the supplied
-table. The :doc:`Query Builder <query_builder>` class contains a full
-compliment of functions for working with data.
+Fungsi get() di atas mengambil semua hasil dari tabel yang disediakan. 
+Sebuah kelas :doc:`Pembangun Kueri <query_builder>` berisi pujian penuh fungsi 
+untuk bekerja dengan data.
 
-Query Builder Insert
-====================
+Pembangun Kueri Masukan
+=======================
 
 ::
 
