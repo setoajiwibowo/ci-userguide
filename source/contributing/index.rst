@@ -8,133 +8,131 @@ Berkontribusi untuk CodeIgniter
 	../documentation/index
 	../DCO
 
-CodeIgniter is a community driven project and accepts contributions of code
-and documentation from the community. These contributions are made in the form
-of Issues or `Pull Requests <https://help.github.com/articles/using-pull-requests/>`_ 
-on the `CodeIgniter repository <https://github.com/bcit-ci/CodeIgniter>`_ on GitHub.
+CodeIgniter sebuah proyek komunitas didorong dan menerima kontribusi kode
+dan dokumentasi dari komunitas. Kontribusi-kontribusi ini dibuat dalam bentuk
+isu-isu atau `Pull Requests <https://help.github.com/articles/using-pull-requests/>`_ 
+di `Repositori CodeIgniter <https://github.com/bcit-ci/CodeIgniter>`_ di GitHub.
 
-Issues are a quick way to point out a bug. If you find a bug or documentation
-error in CodeIgniter then please check a few things first:
+Isu adalah cara cepat untuk menunjukkan bug. Jika Anda menemukan bug atau kesalahan dokumentasi 
+dalam CodeIgniter kemudian silakan periksa beberapa hal pertama:
 
-- There is not already an open Issue
-- The issue has already been fixed (check the develop branch, or look for
-  closed Issues)
-- Is it something really obvious that you fix it yourself?
+- Tidak ada masalah terbuka
+- Masalah telah diperbaiki (check cabang mengembangkan, atau mencari
+  Masalah ditutup)
+- Apakah itu sesuatu yang benar-benar jelas bahwa Anda memperbaikinya?
 
-Reporting issues is helpful but an even better approach is to send a Pull
-Request, which is done by "Forking" the main repository and committing to your
-own copy. This will require you to use the version control system called Git.
-
-*******
-Support
-*******
-
-Please note that GitHub is not for general support questions! If you are
-having trouble using a feature of CodeIgniter, ask for help on our
-`forums <http://forum.codeigniter.com/>`_ instead.
-
-If you are not sure whether you are using something correctly or if you
-have found a bug, again - please ask on the forums first.
+Melaporkan masalah sangat membantu tapi pendekatan yang lebih baik adalah untuk mengirim sebuah 
+*Pull Request*, yang dilakukan oleh "Forking" repositori utama dan berkomitmen untuk 
+salinan Anda sendiri. Ini akan mengharuskan Anda untuk menggunakan sistem kontrol versi 
+yang disebut *Git*.
 
 ********
-Security
+Dukungan
 ********
 
-Did you find a security issue in CodeIgniter?
+Harap dicatat bahwa GitHub tidak untuk dukungan pertanyaan umum! Jika Anda mengalami 
+kesulitan menggunakan fitur CodeIgniter, mintalah bantuan pada
+`forum <http://forum.codeigniter.com/>`_ kami.
 
-Please *don't* disclose it publicly, but e-mail us at security@codeigniter.com,
-or report it via our page on `HackerOne <https://hackerone.com/codeigniter>`_.
-
-If you've found a critical vulnerability, we'd be happy to credit you in our
-`ChangeLog <../changelog>`.
-
-****************************
-Tips for a Good Issue Report
-****************************
-
-Use a descriptive subject line (eg parser library chokes on commas) rather than a vague one (eg. your code broke).
-
-Address a single issue in a report.
-
-Identify the CodeIgniter version (eg 3.0-develop) and the component if you know it (eg. parser library)
-
-Explain what you expected to happen, and what did happen.
-Include error messages and stacktrace, if any.
-
-Include short code segments if they help to explain.
-Use a pastebin or dropbox facility to include longer segments of code or screenshots - do not include them in the issue report itself.
-This means setting a reasonable expiry for those, until the issue is resolved or closed.
-
-If you know how to fix the issue, you can do so in your own fork & branch, and submit a pull request.
-The issue report information above should be part of that.
-
-If your issue report can describe the steps to reproduce the problem, that is great.
-If you can include a unit test that reproduces the problem, that is even better, as it gives whoever is fixing
-it a clearer target!
-
+Jika Anda tidak yakin apakah Anda menggunakan sesuatu dengan benar atau jika Anda
+telah menemukan bug, sekali lagi - silahkan bertanya di forum dahulu.
 
 **********
-Guidelines
+Keamananan
 **********
 
-Before we look into how, here are the guidelines. If your Pull Requests fail
-to pass these guidelines it will be declined and you will need to re-submit
-when you’ve made the changes. This might sound a bit tough, but it is required
-for us to maintain quality of the code-base.
+Apakah Anda menemukan masalah keamanan dalam CodeIgniter?
 
-PHP Style
-=========
+Tolong *jangan* mengungkapkan secara terbuka, tetapi kirim e-mail kepada kami di 
+security@codeigniter.com, atau laporan melalui halaman kami 
+di `HackerOne <https://hackerone.com/codeigniter>`_.
 
-All code must meet the `Style Guide
-<http://www.codeigniter.com/userguide3/general/styleguide.html>`_, which is
-essentially the `Allman indent style
-<http://en.wikipedia.org/wiki/Indent_style#Allman_style>`_, underscores and
-readable operators. This makes certain that all code is the same format as the
-existing code and means it will be as readable as possible.
+Jika Anda telah menemukan kerentanan kritis, kami akan senang untuk meng-kredit Anda di
+`Perubahan Log <../changelog>` kami.
 
-Documentation
-=============
+************************************
+Tips untuk Laporan Masalah yang Baik
+************************************
 
-If you change anything that requires a change to documentation then you will
-need to add it. New classes, methods, parameters, changing default values, etc
-are all things that will require a change to documentation. The change-log
-must also be updated for every change. Also PHPDoc blocks must be maintained.
+Menggunakan baris subjek deskriptif (misalnya parser Librari tersedak pada koma) daripada yang samar-samar (misalnya. kode pecah).
 
-Compatibility
-=============
+Alamat satu masalah dalam laporan.
 
-CodeIgniter recommends PHP 5.5 or newer to be used, but it should be
-compatible with PHP 5.2.4 so all code supplied must stick to this
-requirement. If PHP 5.3 (and above) functions or features are used then
-there must be a fallback for PHP 5.2.4.
+Mengidentifikasi versi CodeIgniter (misalnya 3.0-develop) dan komponennya jika Anda tahu itu (misalnya. parser Librari)
 
-Branching
-=========
+Jelaskan apa yang Anda diharapkan untuk terjadi, dan apa yang terjadi.
+Termasuk pesan kesalahan dan stacktrace, jika ada.
 
-CodeIgniter uses the `Git-Flow
+Meliputi segmen kode singkat jika mereka membantu untuk menjelaskan.
+Menggunakan pastebin atau hanya fasilitas dropbox untuk memasukkan lagi segmen kode atau screenshot - tidak termasuk mereka dalam laporan masalah itu sendiri.
+Ini berarti pengaturan kedaluwarsa wajar bagi mereka, sampai masalah diselesaikan atau ditutup.
+
+Jika Anda tahu bagaimana untuk memperbaiki masalah, Anda dapat melakukannya dengan *fork & branch* Anda sendiri, dan menyerahkan *pull request*.
+Laporan masalah informasi di atas harus menjadi bagian dari itu.
+
+Jika laporan masalah Anda dapat menjelaskan langkah-langkah untuk mereproduksi masalah, itu besar.
+Jika Anda dapat memasukkan unit test yang mereproduksi masalah, itu lebih baik, karena memberikan siapapun memperbaiki
+itu jelas target!
+
+
+*******
+Pedoman
+*******
+
+Sebelum kita melihat ke dalam bagaimana, berikut adalah panduan. Jika *Pull Requests* Anda 
+gagal untuk lulus pedoman itu akan ditolak dan Anda akan perlu untuk mengajukan kembali 
+ketika Anda telah melakukan perubahan. Hal ini mungkin terdengar agak sulit, tetapi 
+diperlukan bagi kita untuk menjaga kualitas kode-dasar.
+
+Gaya PHP
+========
+
+Semua kode harus memenuhi `Pedoman Gaya <http://www.codeigniter.com/userguide3/general/styleguide.html>`_, yang pada dasarnya adalah `Allman indent style <http://en.wikipedia.org/wiki/Indent_style#Allman_style>`_, garis bawah dan operator dapat dibaca. Hal ini membuat yakin bahwa semua kode adalah format yang sama seperti kode yang ada dan cara-cara yang akan dibaca sebagaimana mungkin.
+
+Dokumentasi
+===========
+
+Jika Anda mengubah apa pun yang memerlukan perubahan dokumentasi maka Anda akan
+perlu untuk menambahkannya. Kelas baru, metode, parameter, mengubah nilai default, dll
+adalah segala sesuatu yang akan memerlukan perubahan dokumentasi. Perubahan log
+harus juga diperbaharui untuk setiap perubahan. Juga PHPDoc blok harus dijaga.
+
+Kompatibilitas
+==============
+
+Merekomendasikan CodeIgniter PHP 5.5 atau yang lebih baru untuk digunakan, tetapi harus
+kompatibel dengan PHP 5.2.4 sehingga semua kode yang diberikan harus tetap ini
+persyaratan. Jika fungsi PHP 5.3 (dan di atas) atau fitur yang digunakan kemudian
+harus ada untuk PHP 5.2.4.
+
+Percabangan
+===========
+
+CodeIgniter menggunakan `Git-Flow
 <http://nvie.com/posts/a-successful-git-branching-model/>`_ branching model
-which requires all pull requests to be sent to the "develop" branch. This is
-where the next planned version will be developed. The "master" branch will
-always contain the latest stable version and is kept clean so a "hotfix" (e.g:
-an emergency security patch) can be applied to master to create a new version,
-without worrying about other features holding it up. For this reason all
-commits need to be made to "develop" and any sent to "master" will be closed
-automatically. If you have multiple changes to submit, please place all
-changes into their own branch on your fork.
+yang memerlukan semua *pull requests* untuk dikirim ke cabang "develop". Ini adalah 
+dimana versi berikutnya direncanakan akan dikembangkan. Cabang "master" akan selalu 
+berisi versi stabil terbaru dan tetap bersih sehingga "hotfix" (misalnya: patch 
+keamanan darurat) dapat diterapkan ke master untuk membuat versi baru, tanpa khawatir 
+tentang fitur-fitur lainnya yang memegangnya. Untuk alasan ini semua komit perlu dibuat 
+untuk "develop" dan apa pun yang dikirim ke "master" akan ditutup secara otomatis. 
+Jika Anda memiliki beberapa perubahan untuk mengirimkan, harap cantumkan semua
+perubahan ke cabang *fork* Anda sendiri.
 
-One thing at a time: A pull request should only contain one change. That does
-not mean only one commit, but one change - however many commits it took. The
-reason for this is that if you change X and Y but send a pull request for both
-at the same time, we might really want X but disagree with Y, meaning we
-cannot merge the request. Using the Git-Flow branching model you can create
-new branches for both of these features and send two requests.
+Satu hal pada suatu waktu: sebuah *pull request* hanya boleh berisi satu perubahan. 
+Itu tidak berarti hanya satu commit, tetapi satu perubahan - namun banyak komit. 
+Alasan untuk ini adalah bahwa jika Anda mengubah X dan Y tetapi kirim menarik 
+meminta keduanya pada saat yang sama, kita mungkin benar-benar ingin X tetapi 
+tidak setuju dengan Y, berarti kami tidak dapat menggabungkan *request*. 
+Menggunakan model branching Git-aliran Anda dapat membuat cabang baru untuk 
+kedua fitur tersebut dan mengirim dua permintaan.
 
-Signing
-=======
-You must sign your work, certifying that you either wrote the work or
-otherwise have the right to pass it on to an open source project. git makes
-this trivial as you merely have to use `--signoff` on your commits to your
-CodeIgniter fork.
+Penandatanganan
+===============
+Anda harus menandatangani pekerjaan Anda, menyatakan bahwa Anda baik menulis 
+pekerjaan atau jika tidak memiliki hak untuk menularkannya kepada proyek sumber 
+terbuka. Git membuat ini sepele seperti Anda hanya harus menggunakan '--signoff' 
+pada komit Anda untuk *fork* CodeIgniter Anda.
 
 .. code-block:: bash
 
@@ -146,14 +144,14 @@ or simply
 
 	git commit -s
 
-This will sign your commits with the information setup in your git config, e.g.
+Ini akan menandatangani commit Anda dengan setup informasi di git config Anda , misalnya.
 
 	Signed-off-by: John Q Public <john.public@example.com>
 
-If you are using Tower there is a "Sign-Off" checkbox in the commit window. You
-could even alias git commit to use the -s flag so you don’t have to think about
-it.
+Jika Anda menggunakan *Tower* ada kotak centang "Sign-Off" di jendela komit. 
+Anda bisa bahkan alias git commit untuk menggunakan bendera -s sehingga Anda 
+tidak perlu berpikir tentang hal itu.
 
-By signing your work in this manner, you certify to a "Developer's Certificate
-or Origin". The current version of this certificate is in the :doc:`/DCO` file
-in the root of this documentation.
+Dengan menandatangani Anda bekerja dengan cara ini, Anda menyatakan untuk sebuah "Sertifikat Pengembang Asal". 
+Versi terbaru dari sertifikat ini di berkas :doc:`/DCO`
+di dalam akar dokumentasi ini.
