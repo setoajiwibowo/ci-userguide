@@ -1,1 +1,4 @@
-SyncToy_e4b4d433-0483-47cb-bd50-c11d4e1207da.dat
+build/*
+cilexer/build/*
+cilexer/dist/*
+cilexer/pycilexer.egg-info/*
